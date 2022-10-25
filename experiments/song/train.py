@@ -14,6 +14,7 @@ import pytorch_lightning as pl
 
 from pytorch_lightning.loggers import WandbLogger
 from pytorch_lightning.callbacks import ModelCheckpoint
+from pytorch_lightning.callbacks import LearningRateMonitor
 
 from soynlp.normalizer import repeat_normalize
 
@@ -174,12 +175,14 @@ class Dataloader(pl.LightningDataModule):
 
 
 class Model(pl.LightningModule):
-    def __init__(self, model_name, lr):
+    def __init__(self, model_name, lr, max_epoch, warmup_ratio):
         super().__init__()
         self.save_hyperparameters()
 
         self.model_name = model_name
         self.lr = lr
+        self.max_epoch = max_epoch
+        self.warmup_ratio = warmup_ratio
 
         # 사용할 모델을 호출합니다.
         self.plm = transformers.AutoModelForSequenceClassification.from_pretrained(
@@ -229,8 +232,24 @@ class Model(pl.LightningModule):
         return logits.squeeze()
 
     def configure_optimizers(self):
+        total_steps = len(self.trainer.datamodule.train_dataloader()) * self.max_epoch
         optimizer = torch.optim.AdamW(self.parameters(), lr=self.lr)
-        return optimizer
+        scheduler = transformers.get_linear_schedule_with_warmup(
+            optimizer=optimizer,
+            num_warmup_steps=int(total_steps * self.warmup_ratio),
+            num_training_steps=total_steps,
+        )
+
+        optimizer_config = {
+            "optimizer": optimizer,
+            "lr_scheduler": {
+                "scheduler": scheduler,
+                "interval": "step",
+                "frequency": 1,
+            },
+        }
+
+        return optimizer_config
 
 
 if __name__ == "__main__":
@@ -241,11 +260,13 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_name", default="klue/roberta-small", type=str)
+    parser.add_argument("--wandb_label", default="", type=str)
     parser.add_argument("--batch_size", default=32, type=int)
-    parser.add_argument("--max_epoch", default=10, type=int)
+    parser.add_argument("--max_epoch", default=30, type=int)
     parser.add_argument("--shuffle", default=True, type=bool)
     parser.add_argument("--wandb_offline", default=False, type=bool)
-    parser.add_argument("--learning_rate", default=1e-5, type=float)
+    parser.add_argument("--learning_rate", default=2e-5, type=float)
+    parser.add_argument("--warmup_ratio", default=0.1, type=float)
     parser.add_argument("--num_workers", default=4, type=int)
     parser.add_argument("--train_path", default="../../data/train.csv", type=str)
     parser.add_argument("--dev_path", default="../../data/dev.csv", type=str)
@@ -253,7 +274,7 @@ if __name__ == "__main__":
     parser.add_argument("--predict_path", default="../../data/test.csv", type=str)
     args = parser.parse_args()
 
-    wandb_name = f"{args.model_name}_lr_{args.learning_rate}"
+    wandb_name = f"{args.model_name}_lr_{args.learning_rate}_{args.wandb_label}"
 
     wandb_logger = WandbLogger(
         name=wandb_name, project="STS", offline=args.wandb_offline
@@ -272,14 +293,20 @@ if __name__ == "__main__":
         args.num_workers,
     )
 
-    print(len(dataloader.train_dataloader()))
-    model = Model(args.model_name, args.learning_rate)
+    model = Model(
+        args.model_name, args.learning_rate, args.max_epoch, args.warmup_ratio
+    )
 
     # checkpoint_callback = ModelCheckpoint(save_top_k=3, mode = 'max', monitor = "val_pearson")
+    lr_monitor = LearningRateMonitor(logging_interval="step")
 
     # gpu가 없으면 'gpus=0'을, gpu가 여러개면 'gpus=4'처럼 사용하실 gpu의 개수를 입력해주세요
     trainer = pl.Trainer(
-        logger=wandb_logger, gpus=1, max_epochs=args.max_epoch, log_every_n_steps=1
+        logger=wandb_logger,
+        gpus=1,
+        max_epochs=args.max_epoch,
+        log_every_n_steps=1,
+        callbacks=[lr_monitor],
     )
 
     # Train part
