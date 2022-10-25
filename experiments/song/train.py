@@ -10,6 +10,7 @@ import torchmetrics
 import pytorch_lightning as pl
 
 from pytorch_lightning.loggers import WandbLogger
+from pytorch_lightning.callbacks import ModelCheckpoint
 
 
 class Dataset(torch.utils.data.Dataset):
@@ -31,11 +32,12 @@ class Dataset(torch.utils.data.Dataset):
 
 
 class Dataloader(pl.LightningDataModule):
-    def __init__(self, model_name, batch_size, shuffle, train_path, dev_path, test_path, predict_path):
+    def __init__(self, model_name, batch_size, shuffle, train_path, dev_path, test_path, predict_path, num_workers):
         super().__init__()
         self.model_name = model_name
         self.batch_size = batch_size
         self.shuffle = shuffle
+        self.num_workers = num_workers
 
         self.train_path = train_path
         self.dev_path = dev_path
@@ -101,16 +103,16 @@ class Dataloader(pl.LightningDataModule):
             self.predict_dataset = Dataset(predict_inputs, [])
 
     def train_dataloader(self):
-        return torch.utils.data.DataLoader(self.train_dataset, batch_size=self.batch_size, shuffle=args.shuffle)
+        return torch.utils.data.DataLoader(self.train_dataset, batch_size=self.batch_size, shuffle=args.shuffle, num_workers=self.num_workers)
 
     def val_dataloader(self):
-        return torch.utils.data.DataLoader(self.val_dataset, batch_size=self.batch_size)
+        return torch.utils.data.DataLoader(self.val_dataset, batch_size=self.batch_size, num_workers=self.num_workers)
 
     def test_dataloader(self):
-        return torch.utils.data.DataLoader(self.test_dataset, batch_size=self.batch_size)
+        return torch.utils.data.DataLoader(self.test_dataset, batch_size=self.batch_size, num_workers=self.num_workers)
 
     def predict_dataloader(self):
-        return torch.utils.data.DataLoader(self.predict_dataset, batch_size=self.batch_size)
+        return torch.utils.data.DataLoader(self.predict_dataset, batch_size=self.batch_size, num_workers=self.num_workers)
 
 
 class Model(pl.LightningModule):
@@ -175,25 +177,29 @@ if __name__ == '__main__':
     
     parser = argparse.ArgumentParser()
     parser.add_argument('--model_name', default='klue/roberta-base', type=str)
-    parser.add_argument('--batch_size', default=16, type=int)
-    parser.add_argument('--max_epoch', default=10, type=int)
+    parser.add_argument('--batch_size', default=32, type=int)
+    parser.add_argument('--max_epoch', default=5, type=int)
     parser.add_argument('--shuffle', default=True)
     parser.add_argument('--learning_rate', default=1e-5, type=float)
+    parser.add_argument('--num_workers', default=4, type=int)
     parser.add_argument('--train_path', default='../../data/train.csv')
     parser.add_argument('--dev_path', default='../../data/dev.csv')
     parser.add_argument('--test_path', default='../../data/dev.csv')
     parser.add_argument('--predict_path', default='../../data/test.csv')
     args = parser.parse_args(args=[])
 
-    wandb_logger = WandbLogger(project="STS")
+    wandb_logger = WandbLogger(project="STS", log_model="all")
+    wandb_logger.experiment.config.update(args)
 
     # dataloader와 model을 생성합니다.
     dataloader = Dataloader(args.model_name, args.batch_size, args.shuffle, args.train_path, args.dev_path,
-                            args.test_path, args.predict_path)
+                            args.test_path, args.predict_path, args.num_workers)
     model = Model(args.model_name, args.learning_rate)
 
+    checkpoint_callback = ModelCheckpoint(save_top_k=3, mode = 'max', monitor = "val_pearson")
+
     # gpu가 없으면 'gpus=0'을, gpu가 여러개면 'gpus=4'처럼 사용하실 gpu의 개수를 입력해주세요
-    trainer = pl.Trainer(gpus=1, max_epochs=args.max_epoch, log_every_n_steps=1, logger=wandb_logger)
+    trainer = pl.Trainer(logger=wandb_logger, gpus=1, max_epochs=args.max_epoch, log_every_n_steps=1, callbacks=[checkpoint_callback])
 
     # Train part
     trainer.fit(model=model, datamodule=dataloader)
