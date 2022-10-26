@@ -2,7 +2,7 @@
 
 ## :wave: Hello there!
 
-This is :rocket: **Team NLP-09**'s repository for the first boostcamp AI Tech competition (2022.10.26 ~ 2022.11.03 19:00). 
+This is :rocket: **Team NLP-09**'s repository for the 1st boostcamp AI Tech competition (2022.10.26 ~ 2022.11.03 19:00). 
 
 The competition is on sentence-level Semantic Text Similarity, STS.
 
@@ -21,5 +21,4 @@ The data is from 3 sources:
 2. NSMC (네이버 영화 감성 분석 코퍼스, Naver Sentiment Movie Corpus)
 3. slack (업스테이지(Upstage) 슬랙 데이터)
 
-Each sentence pair in train and dev datasets also include (1) a score from `0` to `5` where `0` indicates zero similarity while `5` indicates that the two sentences match in terms of their core and supplementary content and (2) a binary score where a score of less than 3 from the previous score is mapped to 0 and 1 otherwise.
-<!-- ![](assets/img/front.png) -->
+Each sentence pair in train and dev datasets also include (1) a score from `0` to `5` where `0` indicates zero similarity while `5` indicates that the two sentences match in terms of their core and supplementary content and (2) a binary score where a score of less than `3` from the previous score is mapped to `0` and `1` otherwise.
