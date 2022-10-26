@@ -18,6 +18,8 @@ from pytorch_lightning.callbacks import LearningRateMonitor
 
 from soynlp.normalizer import repeat_normalize
 
+import dill
+
 import wandb
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -262,7 +264,7 @@ if __name__ == "__main__":
     parser.add_argument("--model_name", default="klue/roberta-small", type=str)
     parser.add_argument("--wandb_label", default="", type=str)
     parser.add_argument("--batch_size", default=32, type=int)
-    parser.add_argument("--max_epoch", default=30, type=int)
+    parser.add_argument("--max_epoch", default=1, type=int)
     parser.add_argument("--shuffle", default=True, type=bool)
     parser.add_argument("--wandb_offline", default=False, type=bool)
     parser.add_argument("--learning_rate", default=2e-5, type=float)
@@ -314,4 +316,4 @@ if __name__ == "__main__":
     trainer.test(model=model, datamodule=dataloader)
 
     # 학습이 완료된 모델을 저장합니다.
-    torch.save(model, "model.pt")
+    torch.save(model, "model.pt", pickle_module=dill)
