@@ -177,7 +177,9 @@ class Dataloader(pl.LightningDataModule):
 
 
 class Model(pl.LightningModule):
-    def __init__(self, model_name, lr, max_epoch, warmup_ratio):
+    def __init__(
+        self, model_name, lr, max_epoch, warmup_ratio, gradient_accumulation_steps
+    ):
         super().__init__()
         self.save_hyperparameters()
 
@@ -185,6 +187,7 @@ class Model(pl.LightningModule):
         self.lr = lr
         self.max_epoch = max_epoch
         self.warmup_ratio = warmup_ratio
+        self.gradient_accumulation_steps = gradient_accumulation_steps
 
         # 사용할 모델을 호출합니다.
         self.plm = transformers.AutoModelForSequenceClassification.from_pretrained(
@@ -234,7 +237,11 @@ class Model(pl.LightningModule):
         return logits.squeeze()
 
     def configure_optimizers(self):
-        total_steps = len(self.trainer.datamodule.train_dataloader()) * self.max_epoch
+        total_steps = (
+            len(self.trainer.datamodule.train_dataloader())
+            // self.gradient_accumulation_steps
+            * self.max_epoch
+        )
         optimizer = torch.optim.AdamW(self.parameters(), lr=self.lr)
         scheduler = transformers.get_linear_schedule_with_warmup(
             optimizer=optimizer,
@@ -261,10 +268,11 @@ if __name__ == "__main__":
     torch.cuda.empty_cache()
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_name", default="klue/roberta-small", type=str)
+    parser.add_argument("--model_name", default="klue/roberta-large", type=str)
     parser.add_argument("--wandb_label", default="", type=str)
-    parser.add_argument("--batch_size", default=32, type=int)
-    parser.add_argument("--max_epoch", default=1, type=int)
+    parser.add_argument("--batch_size", default=16, type=int)
+    parser.add_argument("--max_epoch", default=30, type=int)
+    parser.add_argument("--gradient_accumulation_steps", default=1, type=int)
     parser.add_argument("--shuffle", default=True, type=bool)
     parser.add_argument("--wandb_offline", default=False, type=bool)
     parser.add_argument("--learning_rate", default=2e-5, type=float)
@@ -296,7 +304,11 @@ if __name__ == "__main__":
     )
 
     model = Model(
-        args.model_name, args.learning_rate, args.max_epoch, args.warmup_ratio
+        args.model_name,
+        args.learning_rate,
+        args.max_epoch,
+        args.warmup_ratio,
+        args.gradient_accumulation_steps,
     )
 
     # checkpoint_callback = ModelCheckpoint(save_top_k=3, mode = 'max', monitor = "val_pearson")
@@ -309,6 +321,7 @@ if __name__ == "__main__":
         max_epochs=args.max_epoch,
         log_every_n_steps=1,
         callbacks=[lr_monitor],
+        accumulate_grad_batches=args.gradient_accumulation_steps,
     )
 
     # Train part
