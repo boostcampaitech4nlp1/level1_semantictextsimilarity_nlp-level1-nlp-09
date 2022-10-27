@@ -58,6 +58,7 @@ class Dataloader(pl.LightningDataModule):
         test_path,
         predict_path,
         num_workers,
+        tokenizer,
     ):
         super().__init__()
         self.model_name = model_name
@@ -75,10 +76,8 @@ class Dataloader(pl.LightningDataModule):
         self.test_dataset = None
         self.predict_dataset = None
 
-        self.tokenizer = transformers.AutoTokenizer.from_pretrained(
-            model_name, max_length=160
-        )
-        # self.tokenizer.add_tokens(["<PERSON>"])
+        self.tokenizer = tokenizer
+
         self.target_columns = ["label"]
         self.delete_columns = ["id"]
         self.text_columns = ["sentence_1", "sentence_2"]
@@ -178,7 +177,13 @@ class Dataloader(pl.LightningDataModule):
 
 class Model(pl.LightningModule):
     def __init__(
-        self, model_name, lr, max_epoch, warmup_ratio, gradient_accumulation_steps
+        self,
+        model_name,
+        lr,
+        max_epoch,
+        warmup_ratio,
+        gradient_accumulation_steps,
+        tokenizer,
     ):
         super().__init__()
         self.save_hyperparameters()
@@ -193,8 +198,9 @@ class Model(pl.LightningModule):
         self.plm = transformers.AutoModelForSequenceClassification.from_pretrained(
             pretrained_model_name_or_path=model_name, num_labels=1
         )
-        # Loss 계산을 위해 사용될 L1Loss를 호출합니다.
-        self.loss_func = torch.nn.L1Loss()
+        self.plm.resize_token_embeddings(len(tokenizer))
+
+        self.loss_func = torch.nn.MSELoss()
 
     def forward(self, x):
         x = self.plm(x)["logits"]
@@ -268,10 +274,10 @@ if __name__ == "__main__":
     torch.cuda.empty_cache()
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_name", default="klue/roberta-large", type=str)
-    parser.add_argument("--wandb_label", default="", type=str)
-    parser.add_argument("--batch_size", default=16, type=int)
-    parser.add_argument("--max_epoch", default=30, type=int)
+    parser.add_argument("--model_name", default="beomi/KcELECTRA-base", type=str)
+    parser.add_argument("--wandb_label", default="ep100", type=str)
+    parser.add_argument("--batch_size", default=32, type=int)
+    parser.add_argument("--max_epoch", default=100, type=int)
     parser.add_argument("--gradient_accumulation_steps", default=1, type=int)
     parser.add_argument("--shuffle", default=True, type=bool)
     parser.add_argument("--wandb_offline", default=False, type=bool)
@@ -291,6 +297,11 @@ if __name__ == "__main__":
     )
     wandb_logger.experiment.config.update(args)
 
+    tokenizer = transformers.AutoTokenizer.from_pretrained(
+        args.model_name, max_length=160
+    )
+    tokenizer.add_tokens(["<PERSON>"])
+
     # dataloader와 model을 생성합니다.
     dataloader = Dataloader(
         args.model_name,
@@ -301,6 +312,7 @@ if __name__ == "__main__":
         args.test_path,
         args.predict_path,
         args.num_workers,
+        tokenizer,
     )
 
     model = Model(
@@ -309,9 +321,12 @@ if __name__ == "__main__":
         args.max_epoch,
         args.warmup_ratio,
         args.gradient_accumulation_steps,
+        tokenizer,
     )
 
-    # checkpoint_callback = ModelCheckpoint(save_top_k=3, mode = 'max', monitor = "val_pearson")
+    checkpoint_callback = ModelCheckpoint(
+        save_top_k=2, mode="max", monitor="val_pearson"
+    )
     lr_monitor = LearningRateMonitor(logging_interval="step")
 
     # gpu가 없으면 'gpus=0'을, gpu가 여러개면 'gpus=4'처럼 사용하실 gpu의 개수를 입력해주세요
@@ -320,7 +335,7 @@ if __name__ == "__main__":
         gpus=1,
         max_epochs=args.max_epoch,
         log_every_n_steps=1,
-        callbacks=[lr_monitor],
+        callbacks=[lr_monitor, checkpoint_callback],
         accumulate_grad_batches=args.gradient_accumulation_steps,
     )
 
