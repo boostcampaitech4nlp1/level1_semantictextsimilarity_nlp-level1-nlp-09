@@ -9,10 +9,11 @@
         },
     'parameters' : {
         'learning_rate': {
-            'values': [2e-5]
+            'min': 2e-5
+            'max': 1e-5
             },
         'model_name': {
-            'values': ['klue/roberta-base', 'beomi/KcELECTRA-base']
+            'values': ['beomi/KcELECTRA-base-v2022']
         }
 
     }
