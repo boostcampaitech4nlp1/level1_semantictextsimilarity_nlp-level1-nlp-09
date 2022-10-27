@@ -191,8 +191,8 @@ if __name__ == '__main__':
     # 실행 시 '--batch_size=64' 같은 인자를 입력하지 않으면 default 값이 기본으로 실행됩니다
     parser = argparse.ArgumentParser()
     parser.add_argument('--model_name', default='beomi/KcELECTRA-base-v2022', type=str)
-    parser.add_argument('--batch_size', default=64, type=int)
-    parser.add_argument('--max_epoch', default=30, type=int)
+    parser.add_argument('--batch_size', default=32, type=int)
+    parser.add_argument('--max_epoch', default=50, type=int)
     parser.add_argument('--shuffle', default=True)
     parser.add_argument('--learning_rate', default=2e-5, type=float)
     parser.add_argument('--train_path', default='../../../data/train.csv')
