@@ -1,0 +1,12 @@
+program: train.py
+method: bayes
+metric:
+  goal: minimize
+  name: loss
+parameters:
+  dropout:
+    values: [0.0]
+  learning_rate:
+    values: [2e-5]
+  epochs:
+    value: 50
