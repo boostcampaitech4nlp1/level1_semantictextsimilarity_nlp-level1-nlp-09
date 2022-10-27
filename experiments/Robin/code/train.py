@@ -29,11 +29,13 @@ class Dataset(torch.utils.data.Dataset):
 
 
 class Dataloader(pl.LightningDataModule):
-    def __init__(self, model_name, batch_size, shuffle, train_path, dev_path, test_path, predict_path):
+    def __init__(self, model_name, batch_size, shuffle, train_path, dev_path, test_path, predict_path, num_workers):
         super().__init__()
+        # 사용될 객채들을 미리 선언한다
         self.model_name = model_name
         self.batch_size = batch_size
         self.shuffle = shuffle
+        self.num_workers = num_workers
 
         self.train_path = train_path
         self.dev_path = dev_path
@@ -60,6 +62,7 @@ class Dataloader(pl.LightningDataModule):
         return data
 
     def preprocessing(self, data):
+        # 데이터셋을 tokenizing 하기 편하게 만든 함수입니다. 전처리가 끝난 데이터셋을 반환합니다.
         # 안쓰는 컬럼을 삭제합니다.
         data = data.drop(columns=self.delete_columns)
 
@@ -73,6 +76,8 @@ class Dataloader(pl.LightningDataModule):
 
         return inputs, targets
 
+    # stage에 따라 데이터셋을 준비하는 함수입니다.
+    # trainer.fit(),test()등의 함수 이전에 stage인자에 따라 데이터셋을 준비합니다.
     def setup(self, stage='fit'):
         if stage == 'fit':
             # 학습 데이터와 검증 데이터셋을 호출합니다
@@ -99,16 +104,16 @@ class Dataloader(pl.LightningDataModule):
             self.predict_dataset = Dataset(predict_inputs, [])
 
     def train_dataloader(self):
-        return torch.utils.data.DataLoader(self.train_dataset, batch_size=self.batch_size, shuffle=args.shuffle)
+        return torch.utils.data.DataLoader(self.train_dataset, batch_size=self.batch_size, shuffle=args.shuffle, num_workers=self.num_workers)
 
     def val_dataloader(self):
-        return torch.utils.data.DataLoader(self.val_dataset, batch_size=self.batch_size)
+        return torch.utils.data.DataLoader(self.val_dataset, batch_size=self.batch_size, num_workers=self.num_workers)
 
     def test_dataloader(self):
-        return torch.utils.data.DataLoader(self.test_dataset, batch_size=self.batch_size)
+        return torch.utils.data.DataLoader(self.test_dataset, batch_size=self.batch_size, num_workers=self.num_workers)
 
     def predict_dataloader(self):
-        return torch.utils.data.DataLoader(self.predict_dataset, batch_size=self.batch_size)
+        return torch.utils.data.DataLoader(self.predict_dataset, batch_size=self.batch_size, num_workers=self.num_workers)
 
 
 class Model(pl.LightningModule):
@@ -126,6 +131,7 @@ class Model(pl.LightningModule):
         self.loss_func = torch.nn.L1Loss()
 
     def forward(self, x):
+        # 선학습 모델에 데이터를 입력하고 출력을 얻는 코드
         x = self.plm(x)['logits']
 
         return x
@@ -161,6 +167,8 @@ class Model(pl.LightningModule):
         return logits.squeeze()
 
     def configure_optimizers(self):
+        # 모델의 loss function을 최적화를 도와주는 optimizer와 학습 중간에 lr를 조절하는 LR scheduler를 선언하는 함수입니다
+    
         optimizer = torch.optim.AdamW(self.parameters(), lr=self.lr)
         return optimizer
 
@@ -170,24 +178,25 @@ if __name__ == '__main__':
     # 터미널 실행 예시 : python3 run.py --batch_size=64 ...
     # 실행 시 '--batch_size=64' 같은 인자를 입력하지 않으면 default 값이 기본으로 실행됩니다
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model_name', default='klue/roberta-large', type=str)
-    parser.add_argument('--batch_size', default=8, type=int)
+    parser.add_argument('--model_name', default='beomi/KcELECTRA-base', type=str)
+    parser.add_argument('--batch_size', default=32, type=int)
     parser.add_argument('--max_epoch', default=1, type=int)
     parser.add_argument('--shuffle', default=True)
     parser.add_argument('--learning_rate', default=1e-5, type=float)
-    parser.add_argument('--train_path', default='../data/train.csv')
+    parser.add_argument('--train_path', default='../data/train_augmented_times_4.csv')
     parser.add_argument('--dev_path', default='../data/dev.csv')
     parser.add_argument('--test_path', default='../data/dev.csv')
     parser.add_argument('--predict_path', default='../data/test.csv')
+    parser.add_argument("--num_workers", default=8, type=int)
     args = parser.parse_args()
 
     # dataloader와 model을 생성합니다.
     dataloader = Dataloader(args.model_name, args.batch_size, args.shuffle, args.train_path, args.dev_path,
-                            args.test_path, args.predict_path)
+                            args.test_path, args.predict_path, args.num_workers)
     model = Model(args.model_name, args.learning_rate)
 
     # gpu가 없으면 'gpus=0'을, gpu가 여러개면 'gpus=4'처럼 사용하실 gpu의 개수를 입력해주세요
-    trainer = pl.Trainer(gpus=1, max_epochs=1, log_every_n_steps=1)
+    trainer = pl.Trainer(gpus=1, max_epochs=args.max_epoch, log_every_n_steps=1)
 
     # Train part
     trainer.fit(model=model, datamodule=dataloader)
