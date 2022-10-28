@@ -277,20 +277,20 @@ if __name__ == "__main__":
     parser.add_argument("--model_name", default="beomi/KcELECTRA-base", type=str)
     parser.add_argument("--wandb_label", default="Robin", type=str)
     parser.add_argument("--batch_size", default=32, type=int)
-    parser.add_argument("--max_epoch", default=30, type=int)
+    parser.add_argument("--max_epoch", default=10, type=int)
     parser.add_argument("--gradient_accumulation_steps", default=1, type=int)
     parser.add_argument("--shuffle", default=True, type=bool)
     parser.add_argument("--wandb_offline", default=False, type=bool)
     parser.add_argument("--learning_rate", default=2e-5, type=float)
     parser.add_argument("--warmup_ratio", default=0.1, type=float)
     parser.add_argument("--num_workers", default=4, type=int)
-    parser.add_argument("--train_path", default="../data/train_augmented_times_4.csv", type=str)
+    parser.add_argument("--train_path", default="../data/train.csv", type=str)
     parser.add_argument("--dev_path", default="../data/dev.csv", type=str)
     parser.add_argument("--test_path", default="../data/dev.csv", type=str)
     parser.add_argument("--predict_path", default="../data/test.csv", type=str)
     args = parser.parse_args()
 
-    wandb_name = f"{args.model_name}_lr_{args.learning_rate}_{args.wandb_label} + RTT * 4"
+    wandb_name = f"{args.model_name}_lr_{args.learning_rate}_{args.wandb_label}"
 
     wandb_logger = WandbLogger(
         name=wandb_name, entity='ecl-mlstudy', project="STS", offline=args.wandb_offline
