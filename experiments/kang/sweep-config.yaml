@@ -1,6 +1,6 @@
 {
     'program': 'train.py',
-    'name' : 'basic-config',
+    'name' : 'beomi/KcELECTRA-base_lr_2e-5_ep100+rtt_train+rtt_dev',
     'method': 'grid',
     
     'metric' : {
@@ -9,11 +9,10 @@
         },
     'parameters' : {
         'learning_rate': {
-            'min': 2e-5
-            'max': 1e-5
+            'values': [2e-5]
             },
         'model_name': {
-            'values': ['beomi/KcELECTRA-base-v2022']
+            'values': ['beomi/KcELECTRA-base']
         }
 
     }

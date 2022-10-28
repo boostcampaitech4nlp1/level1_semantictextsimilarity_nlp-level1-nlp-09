@@ -274,7 +274,7 @@ if __name__ == "__main__":
     torch.cuda.empty_cache()
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_name", default="beomi/KcELECTRA-base-v2022", type=str)
+    parser.add_argument("--model_name", default="beomi/KcELECTRA-base", type=str)
     parser.add_argument("--wandb_label", default="ep100", type=str)
     parser.add_argument("--batch_size", default=32, type=int)
     parser.add_argument("--max_epoch", default=100, type=int)
@@ -293,7 +293,7 @@ if __name__ == "__main__":
     wandb_name = f"{args.model_name}_lr_{args.learning_rate}_{args.wandb_label}"
 
     wandb_logger = WandbLogger(
-        name=wandb_name, project="Boostcamp-STS-Contest", offline=args.wandb_offline
+        name=wandb_name, project="STS", offline=args.wandb_offline
     )
     wandb_logger.experiment.config.update(args)
 
