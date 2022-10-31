@@ -12,6 +12,17 @@ import torch
 import torchmetrics
 import pytorch_lightning as pl
 
+import torch.backends.cudnn as cudnn
+import random
+
+# seed 고정
+torch.manual_seed(404)
+torch.cuda.manual_seed(404)
+torch.cuda.manual_seed_all(404)
+cudnn.benchmark = False
+cudnn.deterministic = True
+random.seed(404)
+
 from pytorch_lightning.loggers import WandbLogger
 from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.callbacks import LearningRateMonitor
@@ -21,6 +32,21 @@ from soynlp.normalizer import repeat_normalize
 import dill
 
 import wandb
+
+from konlpy.tag import Okt
+okt = Okt()
+
+from sklearn.model_selection import train_test_split, KFold
+
+# 불용어 리스트를 가져옵니다.
+# https://www.kaggle.com/code/yeskinkim/3-sts-semantic-textual-similarity/notebook
+file_path = 'stop_words.txt'
+
+with open(file_path) as f:
+    stop_words = f.read().splitlines()
+
+print(stop_words)
+
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 pattern = re.compile(f"[^ .,?!/@$%~％·∼()\x00-\x7Fㄱ-ㅣ가-힣]+")
@@ -59,6 +85,10 @@ class Dataloader(pl.LightningDataModule):
         predict_path,
         num_workers,
         tokenizer,
+        #kFold 관련
+        #k: int = 1,
+        #split_seed: int = 404,
+        #num_splits: int = 10
     ):
         super().__init__()
         self.model_name = model_name
@@ -97,9 +127,22 @@ class Dataloader(pl.LightningDataModule):
             dataframe.iterrows(), desc="tokenizing", total=len(dataframe)
         ):
             # 두 입력 문장을 [SEP] 토큰으로 이어붙여서 전처리합니다.
-            text = "[SEP]".join(
-                [item[text_column] for text_column in self.text_columns]
-            )
+            for text_column in self.text_columns:
+                #print("Before except stops", item[text_column])
+                # 불용어를 빼봅시다.
+                word_tokens = okt.morphs(item[text_column])
+                result = [word for word in word_tokens if not word in stop_words]
+                item[text_column] = " ".join(result)
+                #print("After except stops", item[text_column])
+
+            text = item[1]+"[SEP]"+item[2]
+            #print("So?", text)
+
+            # [UNK] 최소화. 와중에 없는건 걍 싹 다 넣어보자.
+            new_tokens = ['new_token']
+            new_tokens = set(self.tokenizer.tokenize(text)) - set(self.tokenizer.vocab.keys())
+            tokenizer.add_tokens(list(new_tokens))
+            
             outputs = self.tokenizer(
                 text, add_special_tokens=True, padding="max_length", truncation=True
             )
@@ -132,9 +175,25 @@ class Dataloader(pl.LightningDataModule):
 
             # 학습데이터 준비
             train_inputs, train_targets = self.preprocessing(train_data)
-
             # 검증데이터 준비
             val_inputs, val_targets = self.preprocessing(val_data)
+
+            # kFold 준비
+            # train_data 전체 묶기. total -> train 전체를 의미.
+            #total_dataset = Dataset(train_inputs, train_targets)
+
+            # 데이터셋 num_splits 번 fold
+            #kf = KFold(n_splits=self.num_splits, shuffle=self.shuffle, random_state=self.split_seed)
+            #all_splits = [k for k in kf.split(total_dataset)]
+            # k번째 fold 된 데이터셋의 index 선택
+            #train_indexes, val_indexes = all_splits[self.k]
+            #train_indexes, val_indexes = train_indexes.tolist(), val_indexes.tolist()
+
+            # train 데이터만 shuffle을 적용해줍니다, 필요하다면 val, test 데이터에도 shuffle을 적용할 수 있습니다
+            #self.train_dataset = [total_dataset[x] for x in train_indexes]
+            #self.val_dataset = torch.cat([Dataset(val_inputs, val_targets), [total_dataset[x] for x in val_indexes]], dim=1)
+            #self.val_dataset = Dataset(val_inputs, val_targets) + [total_dataset[x] for x in val_indexes]
+            #print(self.val_dataset)
 
             # train 데이터만 shuffle을 적용해줍니다, 필요하다면 val, test 데이터에도 shuffle을 적용할 수 있습니다
             self.train_dataset = Dataset(train_inputs, train_targets)
@@ -275,9 +334,9 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_name", default="beomi/KcELECTRA-base", type=str)
-    parser.add_argument("--wandb_label", default="ep100", type=str)
+    parser.add_argument("--wandb_label", default="ep50", type=str)
     parser.add_argument("--batch_size", default=32, type=int)
-    parser.add_argument("--max_epoch", default=100, type=int)
+    parser.add_argument("--max_epoch", default=50, type=int)
     parser.add_argument("--gradient_accumulation_steps", default=1, type=int)
     parser.add_argument("--shuffle", default=True, type=bool)
     parser.add_argument("--wandb_offline", default=False, type=bool)
@@ -293,7 +352,7 @@ if __name__ == "__main__":
     wandb_name = f"{args.model_name}_lr_{args.learning_rate}_{args.wandb_label}"
 
     wandb_logger = WandbLogger(
-        name=wandb_name, project="STS", offline=args.wandb_offline
+        name=wandb_name, entity='ecl-mlstudy', project="STS", offline=args.wandb_offline
     )
     wandb_logger.experiment.config.update(args)
 
