@@ -1,0 +1,19 @@
+{
+    'program': 'train.py',
+    'name' : 'beomi/KcELECTRA-base_lr_2e-5_ep100+rtt_train+rtt_dev',
+    'method': 'grid',
+    
+    'metric' : {
+        'name': 'val_pearson',
+        'goal': 'maximize'   
+        },
+    'parameters' : {
+        'learning_rate': {
+            'values': [2e-5]
+            },
+        'model_name': {
+            'values': ['beomi/KcELECTRA-base']
+        }
+
+    }
+}
