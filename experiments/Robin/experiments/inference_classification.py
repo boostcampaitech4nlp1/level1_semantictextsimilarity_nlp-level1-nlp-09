@@ -14,25 +14,24 @@ import transformers
 import torch
 import torchmetrics
 import pytorch_lightning as pl
+from torch.nn import functional as F
 
 from pytorch_lightning.loggers import WandbLogger
 from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.callbacks import LearningRateMonitor
 
 from soynlp.normalizer import repeat_normalize
-from transformers.utils import CONFIG_NAME
-
-import wandb
-
-from omegaconf import OmegaConf
 
 import dill
+
+import wandb
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 pattern = re.compile(f"[^ .,?!/@$%~％·∼()\x00-\x7Fㄱ-ㅣ가-힣]+")
 url_pattern = re.compile(
     r"https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"
 )
+
 
 class Dataset(torch.utils.data.Dataset):
     def __init__(self, inputs, targets=[]):
@@ -66,7 +65,6 @@ class Dataloader(pl.LightningDataModule):
         tokenizer,
     ):
         super().__init__()
-        # 사용될 객채들을 미리 선언한다
         self.model_name = model_name
         self.batch_size = batch_size
         self.shuffle = shuffle
@@ -83,10 +81,11 @@ class Dataloader(pl.LightningDataModule):
         self.predict_dataset = None
 
         self.tokenizer = tokenizer
-        self.target_columns = ['label']
-        self.delete_columns = ['id']
-        self.text_columns = ['sentence_1', 'sentence_2']
-        
+
+        self.target_columns = ["label"]
+        self.delete_columns = ["id"]
+        self.text_columns = ["sentence_1", "sentence_2"]
+
     def text_cleaning(self, text):
         # Ref: https://github.com/Beomi/KcBERT
         text = pattern.sub(" ", text)
@@ -99,23 +98,22 @@ class Dataloader(pl.LightningDataModule):
     def tokenizing(self, dataframe):
         data = []
         for idx, item in tqdm(
-            dataframe.iterrows(), desc='tokenizing', total=len(dataframe)
+            dataframe.iterrows(), desc="tokenizing", total=len(dataframe)
         ):
             # 두 입력 문장을 [SEP] 토큰으로 이어붙여서 전처리합니다.
-            text = '[SEP]'.join(
+            text = "[SEP]".join(
                 [item[text_column] for text_column in self.text_columns]
             )
             outputs = self.tokenizer(
-                text, add_special_tokens=True, padding='max_length', truncation=True
+                text, add_special_tokens=True, padding="max_length", truncation=True
             )
-            data.append(outputs['input_ids'])
+            data.append(outputs["input_ids"])
         return data
 
     def preprocessing(self, data):
-        # 데이터셋을 tokenizing 하기 편하게 만든 함수입니다. 전처리가 끝난 데이터셋을 반환합니다.
         # 안쓰는 컬럼을 삭제합니다.
         data = data.drop(columns=self.delete_columns)
-        
+
         # Text Cleaning
         for text_column in self.text_columns:
             data[text_column] = data[text_column].apply(self.text_cleaning)
@@ -130,10 +128,8 @@ class Dataloader(pl.LightningDataModule):
 
         return inputs, targets
 
-    # stage에 따라 데이터셋을 준비하는 함수입니다.
-    # trainer.fit(),test()등의 함수 이전에 stage인자에 따라 데이터셋을 준비합니다.
-    def setup(self, stage='fit'):
-        if stage == 'fit':
+    def setup(self, stage="fit"):
+        if stage == "fit":
             # 학습 데이터와 검증 데이터셋을 호출합니다
             train_data = pd.read_csv(self.train_path)
             val_data = pd.read_csv(self.dev_path)
@@ -161,7 +157,7 @@ class Dataloader(pl.LightningDataModule):
         return torch.utils.data.DataLoader(
             self.train_dataset,
             batch_size=self.batch_size,
-            shuffle=cfg.data.shuffle,
+            shuffle=args.shuffle,
             num_workers=self.num_workers,
         )
 
@@ -181,6 +177,7 @@ class Dataloader(pl.LightningDataModule):
             batch_size=self.batch_size,
             num_workers=self.num_workers,
         )
+
 
 class Model(pl.LightningModule):
     def __init__(
@@ -203,11 +200,11 @@ class Model(pl.LightningModule):
 
         # 사용할 모델을 호출합니다.
         self.plm = transformers.AutoModelForSequenceClassification.from_pretrained(
-            pretrained_model_name_or_path=model_name, num_labels=1
+            pretrained_model_name_or_path=model_name, num_labels=6
         )
         self.plm.resize_token_embeddings(len(tokenizer))
 
-        self.loss_func = torch.nn.MSELoss()
+        self.loss_func = torch.nn.CrossEntropyLoss()
 
     def forward(self, x):
         x = self.plm(x)["logits"]
@@ -217,19 +214,20 @@ class Model(pl.LightningModule):
     def training_step(self, batch, batch_idx):
         x, y = batch
         logits = self(x)
-        loss = self.loss_func(logits, y.float())
+        loss = self.loss_func(logits, y.type(torch.LongTensor).squeeze().cuda())
         self.log("train_loss", loss)
 
         return loss
 
     def validation_step(self, batch, batch_idx):
         x, y = batch
+    
         logits = self(x)
-        loss = self.loss_func(logits, y.float())
+        loss = self.loss_func(logits, y.type(torch.LongTensor).squeeze().cuda())
         self.log("val_loss", loss)
         self.log(
             "val_pearson",
-            torchmetrics.functional.pearson_corrcoef(logits.squeeze(), y.squeeze()),
+            torchmetrics.functional.pearson_corrcoef(logits.argmax(dim=1).float().squeeze(), y.float().squeeze()),
         )
 
         return loss
@@ -240,14 +238,14 @@ class Model(pl.LightningModule):
 
         self.log(
             "test_pearson",
-            torchmetrics.functional.pearson_corrcoef(logits.squeeze(), y.squeeze()),
+            torchmetrics.functional.pearson_corrcoef(logits.argmax(dim=1).float().squeeze(), y.float().squeeze()),
         )
 
     def predict_step(self, batch, batch_idx):
         x = batch
         logits = self(x)
 
-        return logits.squeeze()
+        return logits.argmax(dim=1).squeeze()
 
     def configure_optimizers(self):
         total_steps = (
@@ -274,101 +272,60 @@ class Model(pl.LightningModule):
         return optimizer_config
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # 하이퍼 파라미터 등 각종 설정값을 입력받습니다
     # 터미널 실행 예시 : python3 run.py --batch_size=64 ...
     # 실행 시 '--batch_size=64' 같은 인자를 입력하지 않으면 default 값이 기본으로 실행됩니다
-    torch.cuda.empty_cache()
-    
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', type=str, default='')
-    args, _ = parser.parse_known_args()
-    cfg = OmegaConf.load(f'./config/{args.config}.yaml')
-    
-    # Fix Random Seed
-    torch.manual_seed(cfg.train.seed)
-    torch.cuda.manual_seed(cfg.train.seed)
-    # torch.cuda.manual_seed_all(cfg.train.seed) # if multi-GPU
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
-    np.random.seed(cfg.train.seed)
-    random.seed(cfg.train.seed)
-    
-    # wandb setup
-    wandb_name = f"[Robin]{cfg.model.model_name}"
-
-    wandb_logger = WandbLogger(
-        name=wandb_name,
-        # entity="ecl-mlstudy",
-        project="mySTS",
-        )
+    parser.add_argument("--model_name", default="beomi/KcELECTRA-base", type=str)
+    parser.add_argument("--wandb_label", default="UNK test", type=str)
+    parser.add_argument("--batch_size", default=32, type=int)
+    parser.add_argument("--max_epoch", default=16, type=int)
+    parser.add_argument("--gradient_accumulation_steps", default=1, type=int)
+    parser.add_argument("--shuffle", default=True, type=bool)
+    parser.add_argument("--wandb_offline", default=False, type=bool)
+    parser.add_argument("--learning_rate", default=2e-5, type=float)
+    parser.add_argument("--warmup_ratio", default=0.1, type=float)
+    parser.add_argument("--num_workers", default=4, type=int)
+    parser.add_argument("--train_path", default="../data/train_five_labels.csv", type=str)
+    parser.add_argument("--dev_path", default="../data/dev_five_labels.csv", type=str)
+    parser.add_argument("--test_path", default="../data/dev_five_labels.csv", type=str)
+    parser.add_argument("--predict_path", default="../data/dev_five_labels.csv", type=str)
+    parser.add_argument("--seed", default=404, type=int)
+    args = parser.parse_args()
 
     # tokenizer setup + add extra tokens to avoid [UNK]
     tokenizer = transformers.AutoTokenizer.from_pretrained(
-        cfg.model.model_name, max_length=160
+        args.model_name, max_length=160
     )
     extra_tokens = ['빂', '칻', '뿨' ,'ᆢ', '탆', '믱', '👌' , '☼' ,'｀', '뵛' ,'굠', '큩', '훃' ,'즠']
     tokenizer.add_tokens(extra_tokens)
 
-
     # dataloader와 model을 생성합니다.
     dataloader = Dataloader(
-        cfg.model.model_name,
-        cfg.train.batch_size,
-        cfg.data.shuffle,
-        cfg.path.train_path,
-        cfg.path.dev_path,
-        cfg.path.test_path, 
-        cfg.path.predict_path,
-        cfg.data.num_workers,
+        args.model_name,
+        args.batch_size,
+        args.shuffle,
+        args.train_path,
+        args.dev_path,
+        args.test_path,
+        args.predict_path,
+        args.num_workers,
         tokenizer,
     )
-    
-    model = Model(
-        cfg.model.model_name,
-        cfg.train.learning_rate,
-        cfg.train.max_epoch,
-        cfg.train.warmup_ratio,
-        cfg.train.gradient_accumulation_steps,
-        tokenizer,
-    )
-    
-    # callbacks customization
-    checkpoint_callback = ModelCheckpoint(
-        save_top_k=2, mode="max", monitor="val_pearson"
-    )
-    lr_monitor = LearningRateMonitor(logging_interval="step")
-    early_stop_callback = EarlyStopping(monitor="val_loss",
-                                        min_delta=0.00,
-                                        patience=5,
-                                        verbose=False,
-                                        mode="min")
-    
-    
     
     # gpu가 없으면 'gpus=0'을, gpu가 여러개면 'gpus=4'처럼 사용하실 gpu의 개수를 입력해주세요
-    trainer = pl.Trainer(
-        logger=wandb_logger,
-        gpus=1,
-        max_epochs=cfg.train.max_epoch,
-        log_every_n_steps=1,
-        callbacks=[lr_monitor,
-                   checkpoint_callback,
-                #    early_stop_callback
-                   ],
-        accumulate_grad_batches=cfg.train.gradient_accumulation_steps,
-    )
-
+    trainer = pl.Trainer(gpus=1, max_epochs=args.max_epoch, log_every_n_steps=1)
 
     # Inference part
     # 저장된 모델로 예측을 진행합니다.
-    model = torch.load('base_model.pt')
+    model = torch.load('model.pt')
     predictions = trainer.predict(model=model, datamodule=dataloader)
 
     # 예측된 결과를 형식에 맞게 반올림하여 준비합니다.
     predictions = list(round(float(i), 1) for i in torch.cat(predictions))
 
     # output 형식을 불러와서 예측된 결과로 바꿔주고, output.csv로 출력합니다.
-    output = pd.read_csv('sample_submission.csv')
+    output = pd.read_csv('dev_five_labels.csv')
     output['target'] = predictions
-    output.to_csv('output.csv', index=False)
+    output.to_csv('classification.csv', index=False)

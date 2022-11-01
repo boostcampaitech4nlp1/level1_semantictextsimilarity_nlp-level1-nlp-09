@@ -14,6 +14,7 @@ import transformers
 import torch
 import torchmetrics
 import pytorch_lightning as pl
+from torch.nn import functional as F
 
 from pytorch_lightning.loggers import WandbLogger
 from pytorch_lightning.callbacks import ModelCheckpoint
@@ -199,11 +200,11 @@ class Model(pl.LightningModule):
 
         # 사용할 모델을 호출합니다.
         self.plm = transformers.AutoModelForSequenceClassification.from_pretrained(
-            pretrained_model_name_or_path=model_name, num_labels=1
+            pretrained_model_name_or_path=model_name, num_labels=6
         )
         self.plm.resize_token_embeddings(len(tokenizer))
 
-        self.loss_func = torch.nn.MSELoss()
+        self.loss_func = torch.nn.CrossEntropyLoss()
 
     def forward(self, x):
         x = self.plm(x)["logits"]
@@ -213,19 +214,20 @@ class Model(pl.LightningModule):
     def training_step(self, batch, batch_idx):
         x, y = batch
         logits = self(x)
-        loss = self.loss_func(logits, y.float())
+        loss = self.loss_func(logits, y.type(torch.LongTensor).squeeze().cuda())
         self.log("train_loss", loss)
 
         return loss
 
     def validation_step(self, batch, batch_idx):
         x, y = batch
+    
         logits = self(x)
-        loss = self.loss_func(logits, y.float())
+        loss = self.loss_func(logits, y.type(torch.LongTensor).squeeze().cuda())
         self.log("val_loss", loss)
         self.log(
             "val_pearson",
-            torchmetrics.functional.pearson_corrcoef(logits.squeeze(), y.squeeze()),
+            torchmetrics.functional.pearson_corrcoef(logits.argmax(dim=1).float().squeeze(), y.float().squeeze()),
         )
 
         return loss
@@ -236,14 +238,14 @@ class Model(pl.LightningModule):
 
         self.log(
             "test_pearson",
-            torchmetrics.functional.pearson_corrcoef(logits.squeeze(), y.squeeze()),
+            torchmetrics.functional.pearson_corrcoef(logits.argmax(dim=1).float().squeeze(), y.float().squeeze()),
         )
 
     def predict_step(self, batch, batch_idx):
         x = batch
         logits = self(x)
 
-        return logits.squeeze()
+        return logits.argmax(dim=1).squeeze()
 
     def configure_optimizers(self):
         total_steps = (
@@ -275,44 +277,46 @@ if __name__ == "__main__":
     # 터미널 실행 예시 : python3 run.py --batch_size=64 ...
     # 실행 시 '--batch_size=64' 같은 인자를 입력하지 않으면 default 값이 기본으로 실행됩니다
     torch.cuda.empty_cache()
-    torch.manual_seed(404)
-
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_name", default="beomi/KcELECTRA-base", type=str)
     parser.add_argument("--wandb_label", default="UNK test", type=str)
     parser.add_argument("--batch_size", default=32, type=int)
-    parser.add_argument("--max_epoch", default=3, type=int)
+    parser.add_argument("--max_epoch", default=16, type=int)
     parser.add_argument("--gradient_accumulation_steps", default=1, type=int)
     parser.add_argument("--shuffle", default=True, type=bool)
     parser.add_argument("--wandb_offline", default=False, type=bool)
     parser.add_argument("--learning_rate", default=2e-5, type=float)
     parser.add_argument("--warmup_ratio", default=0.1, type=float)
     parser.add_argument("--num_workers", default=4, type=int)
-    parser.add_argument("--train_path", default="../data/train.csv", type=str)
-    parser.add_argument("--dev_path", default="../data/dev.csv", type=str)
-    parser.add_argument("--test_path", default="../data/dev.csv", type=str)
+    parser.add_argument("--train_path", default="../data/train_five_labels.csv", type=str)
+    parser.add_argument("--dev_path", default="../data/dev_five_labels.csv", type=str)
+    parser.add_argument("--test_path", default="../data/dev_five_labels.csv", type=str)
     parser.add_argument("--predict_path", default="../data/test.csv", type=str)
-    parser.add_argument("--random_seed", default=404, type=int)
+    parser.add_argument("--seed", default=404, type=int)
     args = parser.parse_args()
 
-    # Fix Seed
-    torch.manual_seed(args.random_seed)
-    torch.cuda.manual_seed(args.random_seed)
-    # torch.cuda.manual_seed_all(args.random_seed) # if multi-GPU
+    # Fix Random Seed
+    torch.manual_seed(args.seed)
+    torch.cuda.manual_seed(args.seed)
+    # torch.cuda.manual_seed_all(args.seed) # if multi-GPU
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
-    np.random.seed(args.random_seed)
-    random.seed(args.random_seed)
+    np.random.seed(args.seed)
+    random.seed(args.seed)
     
-    # wandb setup
-    wandb_name = f"{args.model_name}_lr_{args.learning_rate}_{args.wandb_label}"
+    # # wandb setup
+    wandb_name = f"[Robin] Classification"
 
     wandb_logger = WandbLogger(
-        name=wandb_name, project="mySTS", offline=args.wandb_offline
-    ) # entity='ecl-mlstudy
+        name=wandb_name,
+        entity='ecl-mlstudy',
+        project="STS",
+        offline=args.wandb_offline,
+    )
     wandb_logger.experiment.config.update(args)
 
+    # tokenizer setup + add extra tokens to avoid [UNK]
     tokenizer = transformers.AutoTokenizer.from_pretrained(
         args.model_name, max_length=160
     )
@@ -341,12 +345,16 @@ if __name__ == "__main__":
         tokenizer,
     )
 
-    # callbacks custimization
+    # callbacks customization
     checkpoint_callback = ModelCheckpoint(
         save_top_k=2, mode="max", monitor="val_pearson"
     )
     lr_monitor = LearningRateMonitor(logging_interval="step")
-    early_stop_callback = EarlyStopping(monitor="val_loss", min_delta=0.00, patience=3, verbose=False, mode="min")
+    early_stop_callback = EarlyStopping(monitor="val_loss",
+                                        min_delta=0.00,
+                                        patience=5,
+                                        verbose=False,
+                                        mode="min")
     
     
     # gpu가 없으면 'gpus=0'을, gpu가 여러개면 'gpus=4'처럼 사용하실 gpu의 개수를 입력해주세요
@@ -355,7 +363,10 @@ if __name__ == "__main__":
         gpus=1,
         max_epochs=args.max_epoch,
         log_every_n_steps=1,
-        callbacks=[lr_monitor, checkpoint_callback, early_stop_callback],
+        callbacks=[lr_monitor,
+                   checkpoint_callback,
+                #    early_stop_callback
+                   ],
         accumulate_grad_batches=args.gradient_accumulation_steps,
     )
 
@@ -364,4 +375,4 @@ if __name__ == "__main__":
     trainer.test(model=model, datamodule=dataloader)
 
     # 학습이 완료된 모델을 저장합니다.
-    torch.save(model, "model.pt", pickle_module=dill)
+    torch.save(model, "classification_model.pt", pickle_module=dill)

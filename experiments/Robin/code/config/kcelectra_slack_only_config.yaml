@@ -1,0 +1,24 @@
+path:
+    train_path: ../data/train_slack.csv
+    dev_path: ../data/dev_slack.csv
+    test_path: ../data/dev_slack.csv
+    predict_path: ../data/test.csv
+
+data:
+    shuffle: True
+    augmentation: # adea, bt 등등
+    num_workers: 8
+    
+model:
+    model_name: beomi/KcELECTRA-base
+    saved_name: KcELECTRA slack only 20 epochs
+
+train:
+    seed: 404
+    gpus: 1
+    batch_size: 32
+    max_epoch: 20
+    learning_rate: 1e-5
+    logging_step: 1
+    warmup_ratio: 0.1
+    gradient_accumulation_steps: 1
