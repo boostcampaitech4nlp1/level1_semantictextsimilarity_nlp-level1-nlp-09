@@ -33,7 +33,7 @@ if __name__ == "__main__":
     parser.add_argument("--gradient_accumulation_steps", default=1, type=int)
     parser.add_argument("--seed", default=404, type=int)
     parser.add_argument("--shuffle", default=True, type=bool)
-    parser.add_argument("--wandb_offline", default=False, type=bool)
+    parser.add_argument("--wandb_offline", default=True, type=bool)
     parser.add_argument("--learning_rate", default=2e-5, type=float)
     parser.add_argument("--warmup_ratio", default=0.1, type=float)
     parser.add_argument("--num_workers", default=4, type=int)
@@ -45,7 +45,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     wandb_name = (
-        f"FacerAin_{args.model_name}_lr_{args.learning_rate}_{args.wandb_label}"
+        f"Robin_{args.model_name}_lr_{args.learning_rate}_{args.wandb_label}"
     )
 
     wandb_logger = WandbLogger(
