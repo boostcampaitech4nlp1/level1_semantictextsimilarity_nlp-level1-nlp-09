@@ -1,0 +1,504 @@
+model pred: 3.8
+id              boostcamp-sts-v1-dev-016
+source                      nsmc-sampled
+sentence_1        가슴이 먹먹해서 어쩔 바를 모르겠습니다.
+sentence_2                   가슴이 너무 먹먹하다
+label                                2.6
+binary-label                         1.0
+Name: 16, dtype: object
+-------------------------------------
+model pred: 1.1
+id              boostcamp-sts-v1-dev-018
+source                         slack-rtt
+sentence_1                   코파일럿은 사랑입니다
+sentence_2                    조종사는 사랑입니다
+label                                3.2
+binary-label                         1.0
+Name: 18, dtype: object
+-------------------------------------
+model pred: 1.3
+id              boostcamp-sts-v1-dev-029
+source                     slack-sampled
+sentence_1                엥 제가 2등인가요? ㅋㅋ
+sentence_2               엥 은메달인가요 제가? ㅋㅋ
+label                                2.6
+binary-label                         1.0
+Name: 29, dtype: object
+-------------------------------------
+model pred: 0.6
+id              boostcamp-sts-v1-dev-031
+source                      nsmc-sampled
+sentence_1       진짜 마이클 베이 역작이네요... 폭풍감동
+sentence_2                  보다가감동...진짜울뻔
+label                                1.6
+binary-label                         0.0
+Name: 31, dtype: object
+-------------------------------------
+model pred: 2.8
+id              boostcamp-sts-v1-dev-036
+source                         slack-rtt
+sentence_1                 음악룸들 만들어 봅시다.
+sentence_2                 음악실을 만들어 봅시다.
+label                                3.8
+binary-label                         1.0
+Name: 36, dtype: object
+-------------------------------------
+model pred: 1.9
+id              boostcamp-sts-v1-dev-044
+source                         slack-rtt
+sentence_1                   ㅋㅋ두분 남매 바이브
+sentence_2                   ㅎㅎ 두 남매 분위기
+label                                3.6
+binary-label                         1.0
+Name: 44, dtype: object
+-------------------------------------
+model pred: 1.1
+id                      boostcamp-sts-v1-dev-047
+source                              nsmc-sampled
+sentence_1                     난 애라서 재밌네요...그럭저럭
+sentence_2      그냥 그럭저럭 재밌긴한데 스토리를 너무꼬아놔서 머리아프다~
+label                                        2.2
+binary-label                                 0.0
+Name: 47, dtype: object
+-------------------------------------
+model pred: 2.3
+id              boostcamp-sts-v1-dev-053
+source                      nsmc-sampled
+sentence_1                  평점대비 너무 하네요~
+sentence_2                    평점 너무 낮아..
+label                                1.2
+binary-label                         0.0
+Name: 53, dtype: object
+-------------------------------------
+model pred: 3.3
+id              boostcamp-sts-v1-dev-065
+source                         slack-rtt
+sentence_1                    ㅋㅋ 실습까지 ㅋㅋ
+sentence_2                       ㅎㅎ 연습까지
+label                                1.8
+binary-label                         0.0
+Name: 65, dtype: object
+-------------------------------------
+model pred: 4.2
+id              boostcamp-sts-v1-dev-076
+source                  petition-sampled
+sentence_1              문재인 대통령을 하야시켜주세요
+sentence_2           문재인 대통령을 사퇴를 청원합니다.
+label                                3.0
+binary-label                         1.0
+Name: 76, dtype: object
+-------------------------------------
+model pred: 3.0
+id                            boostcamp-sts-v1-dev-081
+source                                       slack-rtt
+sentence_1      와- 뮤직페스티벌 가는 거 고려해볼 수 있는 세상이 다시 오다니~~~
+sentence_2                 와우~ 가요대축제가 생각나는 세상이 돌아온다~~~
+label                                              1.8
+binary-label                                       0.0
+Name: 81, dtype: object
+-------------------------------------
+model pred: 3.2
+id              boostcamp-sts-v1-dev-097
+source                      nsmc-sampled
+sentence_1                 명절때 보던 기억이 난다
+sentence_2                군복무 시절 명절 날 봤음
+label                                1.8
+binary-label                         0.0
+Name: 97, dtype: object
+-------------------------------------
+model pred: 1.0
+id                               boostcamp-sts-v1-dev-106
+source                                       nsmc-sampled
+sentence_1      ....난또 단편 영화인줄알았는데 이뭐병 에니안보신분은 보지마세요 돈날려요
+sentence_2             어우 완전 오글거리고 재미도없고....이건 뭐 진심 돈아까웠다
+label                                                 2.4
+binary-label                                          0.0
+Name: 106, dtype: object
+-------------------------------------
+model pred: 1.3
+id                      boostcamp-sts-v1-dev-111
+source                          petition-sampled
+sentence_1                  국민 청원 및 제안 플랫폼 관련 의견
+sentence_2      국민 청원 및 제안 플랫폼에 반대 댓글 쓸수 있게 해주세요
+label                                        2.4
+binary-label                                 0.0
+Name: 111, dtype: object
+-------------------------------------
+model pred: 2.7
+id              boostcamp-sts-v1-dev-113
+source                      nsmc-sampled
+sentence_1                    되게 집중해서 봤다
+sentence_2           처음엔 집중해서 봤는데 갈수록개막장
+label                                1.4
+binary-label                         0.0
+Name: 113, dtype: object
+-------------------------------------
+model pred: 3.0
+id              boostcamp-sts-v1-dev-130
+source                  petition-sampled
+sentence_1                    국회의원 월급 삭감
+sentence_2                   국회의원 급여 미지급
+label                                1.8
+binary-label                         0.0
+Name: 130, dtype: object
+-------------------------------------
+model pred: 1.9
+id                             boostcamp-sts-v1-dev-135
+source                                     nsmc-sampled
+sentence_1           보다는 개연성 있는 줄거리와 볼수록 매혹되는 남 주인공~!!!
+sentence_2      처음엔 정말 허접해 보이지만, 보면 볼수록 빠져드는 매력적인 영화~!!
+label                                               0.6
+binary-label                                        0.0
+Name: 135, dtype: object
+-------------------------------------
+model pred: 1.3
+id                 boostcamp-sts-v1-dev-141
+source                         nsmc-sampled
+sentence_1        분을 두시간으로 늘리고싶다면 이 영화를 추천.
+sentence_2      인생에서 두시간을 쓰레기통에 버리고싶다면 보세요.
+label                                   2.8
+binary-label                            1.0
+Name: 141, dtype: object
+-------------------------------------
+model pred: 1.6
+id                boostcamp-sts-v1-dev-151
+source                    petition-sampled
+sentence_1               유은혜교육부총리 적극 지지합니다
+sentence_2      비리유치원의 장상화, 유은혜 장관을 지지합니다.
+label                                  2.8
+binary-label                           1.0
+Name: 151, dtype: object
+-------------------------------------
+model pred: 3.1
+id                                       boostcamp-sts-v1-dev-154
+source                                                   nsmc-rtt
+sentence_1                남들과다르다는이유만으로 억울한 죽음을 당한 브랜든 티나의 명복을 빕니다
+sentence_2      다른 사람들과 다르다는 이유로 부당한 죽음을 당하신 나머지 Brandon Tina를...
+label                                                         4.6
+binary-label                                                  1.0
+Name: 154, dtype: object
+-------------------------------------
+model pred: 2.4
+id              boostcamp-sts-v1-dev-156
+source                  petition-sampled
+sentence_1                문재인 대통님게 청원합니다
+sentence_2               문제인 대통령님깨 청원합니다
+label                                5.0
+binary-label                         1.0
+Name: 156, dtype: object
+-------------------------------------
+model pred: 0.4
+id                               boostcamp-sts-v1-dev-163
+source                                      slack-sampled
+sentence_1      오늘 안에 가장 많은 표를 받으신 분께는 상품권을 전달드리도록 하겠습니다!
+sentence_2          채택된 아이디어를 내주시는 분께는 을 보내드리겠습니다아~ㅊㅋㅊㅋ!!
+label                                                 1.5
+binary-label                                          0.0
+Name: 163, dtype: object
+-------------------------------------
+model pred: 3.9
+id                                      boostcamp-sts-v1-dev-164
+source                                                 slack-rtt
+sentence_1      날이 더 추워지기 전에 한번 야외 모임 하기 좋은 타이밍이였던 것 같지만 다음 기회에!
+sentence_2                날이 쌀쌀해지기 전에 야외모임 하기 좋은 시기인 것 같지만 다음에는!
+label                                                        2.8
+binary-label                                                 1.0
+Name: 164, dtype: object
+-------------------------------------
+model pred: 4.0
+id               boostcamp-sts-v1-dev-171
+source                       petition-rtt
+sentence_1          (선언만 해두고 차후에 적정시점 실행)
+sentence_2      (나중에 적절한 시점에 선언하고 실행하면 됨)
+label                                 1.2
+binary-label                          0.0
+Name: 171, dtype: object
+-------------------------------------
+model pred: 4.4
+id                        boostcamp-sts-v1-dev-206
+source                                   slack-rtt
+sentence_1        투자 잘 모르는 저한테 좋은 정보들 많이 알려 주었습니다.
+sentence_2      투자에 대해 잘 모르는 분들에게 좋은 정보를 많이 주셨습니다.
+label                                          3.4
+binary-label                                   1.0
+Name: 206, dtype: object
+-------------------------------------
+model pred: 4.6
+id              boostcamp-sts-v1-dev-209
+source                      nsmc-sampled
+sentence_1                재미있게 잘 보고 있습니다
+sentence_2                   재미있게 잘 봤습니다
+label                                3.2
+binary-label                         1.0
+Name: 209, dtype: object
+-------------------------------------
+model pred: 3.9
+id              boostcamp-sts-v1-dev-230
+source                      nsmc-sampled
+sentence_1                    시노부는 행복입니다
+sentence_2                    시노부는 사랑입니다
+label                                2.6
+binary-label                         1.0
+Name: 230, dtype: object
+-------------------------------------
+model pred: 1.7
+id              boostcamp-sts-v1-dev-251
+source                  petition-sampled
+sentence_1                  시급 다시 낮춰주세요.
+sentence_2                최저임금 꼼수 막아주세요.
+label                                0.4
+binary-label                         0.0
+Name: 251, dtype: object
+-------------------------------------
+model pred: 4.4
+id              boostcamp-sts-v1-dev-255
+source                          nsmc-rtt
+sentence_1                 고민없이 만든 로맨틱물.
+sentence_2              고민 없이 만든 로맨스 영화.
+label                                3.4
+binary-label                         1.0
+Name: 255, dtype: object
+-------------------------------------
+model pred: 1.7
+id                        boostcamp-sts-v1-dev-270
+source                                nsmc-sampled
+sentence_1                 별다섯개주니 총평점 점올라가 버리네 ㅋㅋ;
+sentence_2      별개주면 평점 몇올라갈까 궁금해서 개줬다 점이나 올려줬다 형이
+label                                          2.8
+binary-label                                   1.0
+Name: 270, dtype: object
+-------------------------------------
+model pred: 2.5
+id              boostcamp-sts-v1-dev-277
+source                     slack-sampled
+sentence_1               꿈 꾸는 그날이 올때까지!!
+sentence_2             아아아!! 그날이여 어서오라!!
+label                                1.4
+binary-label                         0.0
+Name: 277, dtype: object
+-------------------------------------
+model pred: 2.5
+id              boostcamp-sts-v1-dev-285
+source                  petition-sampled
+sentence_1                    부동산 양극화 주범
+sentence_2       정부는 책임지고 부동산 양극화 해결해주세요
+label                                1.2
+binary-label                         0.0
+Name: 285, dtype: object
+-------------------------------------
+model pred: 3.9
+id                                       boostcamp-sts-v1-dev-288
+source                                               petition-rtt
+sentence_1      과장과 공포에 굴복하여 도리어 국민생명을 위협하고 있는 비이성적인 '독일 따라하기'...
+sentence_2      과장과 공포에 굴복하여 국민의 생명을 위협하는 불합리한 '독일을 모방'하는 비핵화 ...
+label                                                         2.4
+binary-label                                                  0.0
+Name: 288, dtype: object
+-------------------------------------
+model pred: 2.7
+id                                       boostcamp-sts-v1-dev-290
+source                                               nsmc-sampled
+sentence_1      조금이라도 본 게 아까워서라도 웬만하면 끝까지 볼랬는데, 토나올 것 같아 도저히 못...
+sentence_2                            보다가 중간에 끄고 싶었은데 본게 아까워서 못껐다
+label                                                         1.0
+binary-label                                                  0.0
+Name: 290, dtype: object
+-------------------------------------
+model pred: 3.2
+id                              boostcamp-sts-v1-dev-301
+source                                      petition-rtt
+sentence_1          문 대통령은 북미 수교 정상화시켜 남북한 평화와 통일의길로 ㅎㅣㅎ
+sentence_2      문 대통령은 남북한의 국교 정상화를 통해 남북한의 평화와 통일을 이뤘다.
+label                                                2.2
+binary-label                                         0.0
+Name: 301, dtype: object
+-------------------------------------
+model pred: 1.1
+id                boostcamp-sts-v1-dev-342
+source                    petition-sampled
+sentence_1             피의자 김성수 강력한 처벌 원합니다
+sentence_2      강서구 pc방 살인사건 피의자 김성수 감형 반대
+label                                  2.8
+binary-label                           1.0
+Name: 342, dtype: object
+-------------------------------------
+model pred: 2.3
+id              boostcamp-sts-v1-dev-347
+source                  petition-sampled
+sentence_1                  북한에 대한 환상 깨라
+sentence_2               북한에 끌려다니지 마십시오.
+label                                1.2
+binary-label                         0.0
+Name: 347, dtype: object
+-------------------------------------
+model pred: 3.1
+id              boostcamp-sts-v1-dev-357
+source                      petition-rtt
+sentence_1                  음주운전 확실히잡읍시다
+sentence_2                 음주운전을 꼭 만납시다.
+label                                1.4
+binary-label                         0.0
+Name: 357, dtype: object
+-------------------------------------
+model pred: 1.6
+id                     boostcamp-sts-v1-dev-371
+source                             nsmc-sampled
+sentence_1               라는 생각만 들 정도로 가슴에 와닿았다.
+sentence_2      라는 생각이 들 정도로 이야기와 노래 연기력이 대단했다.
+label                                       2.6
+binary-label                                1.0
+Name: 371, dtype: object
+-------------------------------------
+model pred: 3.5
+id                 boostcamp-sts-v1-dev-390
+source                             nsmc-rtt
+sentence_1      편보다 편이 더 재밌는 영화... 편부터는 보지마
+sentence_2        본편보다 영화가 더 재밌어... 본편은 보지마
+label                                   1.6
+binary-label                            0.0
+Name: 390, dtype: object
+-------------------------------------
+model pred: 3.6
+id              boostcamp-sts-v1-dev-412
+source                         slack-rtt
+sentence_1                 ㅋㅋ넘 잼썼어요 진짜ㅋㅋ
+sentence_2              ㅋㅋ 정말 재밌게 봤어요 ㅋㅋ
+label                                2.4
+binary-label                         0.0
+Name: 412, dtype: object
+-------------------------------------
+model pred: 0.8
+id              boostcamp-sts-v1-dev-420
+source                         slack-rtt
+sentence_1                  아무래도 상관 없어요.
+sentence_2             그것은 정말 중요하지 않습니다.
+label                                1.8
+binary-label                         0.0
+Name: 420, dtype: object
+-------------------------------------
+model pred: 1.9
+id              boostcamp-sts-v1-dev-433
+source                     slack-sampled
+sentence_1                 베란다도 너무 예뻐요!!
+sentence_2          우와 가을!!! 다 너무 예뻐요!!!
+label                                0.8
+binary-label                         0.0
+Name: 433, dtype: object
+-------------------------------------
+model pred: 3.9
+id                boostcamp-sts-v1-dev-454
+source                           slack-rtt
+sentence_1          갈수록 뛰는 시간이 늘 것 같은 설렘!!
+sentence_2      러닝타임이 길어질수록 더해지는 것 같은 설렘!!
+label                                  2.2
+binary-label                           0.0
+Name: 454, dtype: object
+-------------------------------------
+model pred: 3.1
+id              boostcamp-sts-v1-dev-460
+source                  petition-sampled
+sentence_1           국회의원 세비 및 봉급을 동결합시다
+sentence_2        국회의원 월급이나 연봉 삭감을 청원합니다
+label                                1.8
+binary-label                         0.0
+Name: 460, dtype: object
+-------------------------------------
+model pred: 4.1
+id              boostcamp-sts-v1-dev-473
+source                          nsmc-rtt
+sentence_1             거부감은 들지만 신선하고 재밌다
+sentence_2           거부되었지만 신선하고 재미있습니다.
+label                                3.0
+binary-label                         1.0
+Name: 473, dtype: object
+-------------------------------------
+model pred: 4.0
+id              boostcamp-sts-v1-dev-475
+source                  petition-sampled
+sentence_1              국회의원 의석수를 줄여야합니다
+sentence_2              국회의원 수를 반으로 줄입시다
+label                                3.0
+binary-label                         1.0
+Name: 475, dtype: object
+-------------------------------------
+model pred: 3.0
+id              boostcamp-sts-v1-dev-485
+source                         slack-rtt
+sentence_1          함께 실험해보실분들 모두 환영입니다!
+sentence_2        누구나 우리와 함께 실험할 수 있습니다!
+label                                1.6
+binary-label                         0.0
+Name: 485, dtype: object
+-------------------------------------
+model pred: 2.4
+id                       boostcamp-sts-v1-dev-488
+source                              slack-sampled
+sentence_1      한시간이 넘도록 말씀 나누는데 모니터 빨려들어갈 뻔 했네요.
+sentence_2                 30분이 얘기하다보니 한시간이 되었네요.
+label                                         1.0
+binary-label                                  0.0
+Name: 488, dtype: object
+-------------------------------------
+model pred: 1.5
+id              boostcamp-sts-v1-dev-495
+source                          nsmc-rtt
+sentence_1             너무 산만하고 시끄럽고 재미없음
+sentence_2                    재미없어도 너무없어
+label                                2.8
+binary-label                         1.0
+Name: 495, dtype: object
+-------------------------------------
+model pred: 4.0
+id              boostcamp-sts-v1-dev-502
+source                  petition-sampled
+sentence_1                    자유한당나경원 파면
+sentence_2                   자유한당 나경원 파면
+label                                5.0
+binary-label                         1.0
+Name: 502, dtype: object
+-------------------------------------
+model pred: 2.7
+id              boostcamp-sts-v1-dev-517
+source                  petition-sampled
+sentence_1                  조두순 사형 해야합니다
+sentence_2             조두순을 무기징역으로 해야합니다
+label                                1.5
+binary-label                         0.0
+Name: 517, dtype: object
+-------------------------------------
+model pred: 4.0
+id              boostcamp-sts-v1-dev-527
+source                  petition-sampled
+sentence_1                    최저임금위원회 해체
+sentence_2            최저임금위원회 해체해야만 한다 꼭
+label                                3.0
+binary-label                         1.0
+Name: 527, dtype: object
+-------------------------------------
+model pred: 2.9
+id              boostcamp-sts-v1-dev-528
+source                     slack-sampled
+sentence_1                 ㅋㅋ너무 재밌었어요!!!
+sentence_2                다시 봐도 너무 웃겨요ㅋㅋ
+label                                1.4
+binary-label                         0.0
+Name: 528, dtype: object
+-------------------------------------
+model pred: 3.5
+id                  boostcamp-sts-v1-dev-532
+source                             slack-rtt
+sentence_1      아 그와중에 프로필 사진을 이어붙이신 정성…. ㅋㅋ
+sentence_2      아 그 와중에 프로필 사진 첨부하는 진심.... ㅋ
+label                                    2.4
+binary-label                             0.0
+Name: 532, dtype: object
+-------------------------------------
+model pred: 1.4
+id              boostcamp-sts-v1-dev-538
+source                     slack-sampled
+sentence_1                미사도 껴주세요... ㅎㅎ
+sentence_2              오 저도 끼워주세요..! ㅎㅎ
+label                                2.8
+binary-label                         1.0
+Name: 538, dtype: object
+-------------------------------------

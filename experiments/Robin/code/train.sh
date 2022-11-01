@@ -1,1 +1,1 @@
-python3 train.py --config kcelectra_nsmc_only_config
+python3 train.py --config kcelectra_nsmc_only_config_broken

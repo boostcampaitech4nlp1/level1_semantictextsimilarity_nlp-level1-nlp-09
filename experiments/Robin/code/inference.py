@@ -324,45 +324,19 @@ if __name__ == '__main__':
         tokenizer,
     )
     
-    model = Model(
-        cfg.model.model_name,
-        cfg.train.learning_rate,
-        cfg.train.max_epoch,
-        cfg.train.warmup_ratio,
-        cfg.train.gradient_accumulation_steps,
-        tokenizer,
-    )
-    
-    # callbacks customization
-    checkpoint_callback = ModelCheckpoint(
-        save_top_k=2, mode="max", monitor="val_pearson"
-    )
-    lr_monitor = LearningRateMonitor(logging_interval="step")
-    early_stop_callback = EarlyStopping(monitor="val_loss",
-                                        min_delta=0.00,
-                                        patience=5,
-                                        verbose=False,
-                                        mode="min")
-    
-    
-    
     # gpu가 없으면 'gpus=0'을, gpu가 여러개면 'gpus=4'처럼 사용하실 gpu의 개수를 입력해주세요
     trainer = pl.Trainer(
         logger=wandb_logger,
         gpus=1,
         max_epochs=cfg.train.max_epoch,
         log_every_n_steps=1,
-        callbacks=[lr_monitor,
-                   checkpoint_callback,
-                #    early_stop_callback
-                   ],
         accumulate_grad_batches=cfg.train.gradient_accumulation_steps,
     )
 
 
     # Inference part
     # 저장된 모델로 예측을 진행합니다.
-    model = torch.load('base_model.pt')
+    model = torch.load('base_model.pt', pickle_module=dill)
     predictions = trainer.predict(model=model, datamodule=dataloader)
 
     # 예측된 결과를 형식에 맞게 반올림하여 준비합니다.

@@ -286,13 +286,7 @@ if __name__ == '__main__':
     cfg = OmegaConf.load(f'./config/{args.config}.yaml')
     
     # Fix Random Seed
-    torch.manual_seed(cfg.train.seed)
-    torch.cuda.manual_seed(cfg.train.seed)
-    # torch.cuda.manual_seed_all(cfg.train.seed) # if multi-GPU
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
-    np.random.seed(cfg.train.seed)
-    random.seed(cfg.train.seed)
+    pl.seed_everything(cfg.train.seed)
     
     # wandb setup
     wandb_name = f"[Robin]{cfg.model.saved_name}"
@@ -302,13 +296,18 @@ if __name__ == '__main__':
         entity="ecl-mlstudy",
         project="STS",
         )
-
+    wandb_logger.experiment.config.update(cfg)
+    
     # tokenizer setup + add extra tokens to avoid [UNK]
     tokenizer = transformers.AutoTokenizer.from_pretrained(
         cfg.model.model_name, max_length=160
     )
-    extra_tokens = ['빂', '칻', '뿨' ,'ᆢ', '탆', '믱', '👌' , '☼' ,'｀', '뵛' ,'굠', '큩', '훃' ,'즠']
-    tokenizer.add_tokens(extra_tokens)
+    extra_tokens_kcelectra = ['<PERSON>', '빂', '칻', '뿨' ,'ᆢ', '탆', '믱', '👌' , '☼' ,'｀', '뵛' ,'굠', '큩', '훃' ,'즠']
+    extra_tokens_koelectra = ['<PERSON>','휏','퐈이야','믕지','보샸','쨰','앜','괞찮았다','뽀쨕','자윱','소듕','쵯한','횽','빂츠','쵝오','줸쟝','얔','닼','앖네여','믓찌게',
+                              '갖췃','욯','횐','됍','역싀','뽜팅','왘','좠','아늼니꽈','대튱령','완줜','설겆이','유튭','욬','홐','쳬','스쾃','웤','칻','즤','늣','홓','끅','이뿨','쎴',
+                              '짘','괜탆','옄','바럤','앍','믱','빂','스웻','넼','힣','솓','핳','짦','｀','우쌰','뵛','댱','돜','설렜','뀰','닠','헐춋류훃','즠','영홥','좍','쎠','굠','싀',
+                              '큩','낯','봤늡','벴','땈','퉷','흐믓','요롷','어꺠','밨','뭏']
+    tokenizer.add_tokens(extra_tokens_kcelectra)
 
 
     # dataloader와 model을 생성합니다.

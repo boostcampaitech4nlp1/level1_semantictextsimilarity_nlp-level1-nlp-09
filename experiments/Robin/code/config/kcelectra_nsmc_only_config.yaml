@@ -7,7 +7,7 @@ path:
 data:
     shuffle: True
     augmentation: # adea, bt 등등
-    num_workers: 8
+    num_workers: 4
     
 model:
     model_name: beomi/KcELECTRA-base

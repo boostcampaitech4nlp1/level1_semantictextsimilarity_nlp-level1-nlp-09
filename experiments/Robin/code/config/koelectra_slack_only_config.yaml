@@ -10,8 +10,8 @@ data:
     num_workers: 4
     
 model:
-    model_name: beomi/KcELECTRA-base
-    saved_name: KcELECTRA slack only 20 epochs
+    model_name: monologg/koelectra-base-v3-discriminator
+    saved_name: KoELECTRA-v3 slack only 20 epochs
 
 train:
     seed: 404

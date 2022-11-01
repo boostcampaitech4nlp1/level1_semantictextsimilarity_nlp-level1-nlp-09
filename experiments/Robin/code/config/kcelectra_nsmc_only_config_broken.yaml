@@ -1,7 +1,7 @@
 path:
-    train_path: ../data/train_slack.csv
-    dev_path: ../data/dev_slack.csv
-    test_path: ../data/dev_slack.csv
+    train_path: ../data/train_nsmc.csv
+    dev_path: ../data/train_nsmc.csv
+    test_path: ../data/train_nsmc.csv
     predict_path: ../data/test.csv
 
 data:
@@ -11,13 +11,13 @@ data:
     
 model:
     model_name: beomi/KcELECTRA-base
-    saved_name: KcELECTRA slack only 20 epochs
+    saved_name: KcELECTRA nsmc only
 
 train:
     seed: 404
     gpus: 1
     batch_size: 32
-    max_epoch: 20
+    max_epoch: 10
     learning_rate: 1e-5
     logging_step: 1
     warmup_ratio: 0.1
