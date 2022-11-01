@@ -12,7 +12,7 @@
             'values': [2e-5]
             },
         'model_name': {
-            'values': ['klue/roberta-base', 'beomi/KcELECTRA-base']
+            'values': ['klue/roberta-base', 'beomi/KcELECTRA-base', "monologg/koelectra-base-v3-discriminator"]
         }
 
     }
