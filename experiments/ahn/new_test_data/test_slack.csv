@@ -1,0 +1,340 @@
+,id,source,sentence_1,sentence_2
+4,boostcamp-sts-v1-test-004,slack-rtt,왜 혼자 있지.. ㅠㅠ,왜 혼자야.. ㅠㅠ
+15,boostcamp-sts-v1-test-015,slack-rtt,306090 발표 날만을 위해 머리 열심히 굴려봤습니다.,306090 발표날을 위해 열심히 머리를 굴렸습니다.
+16,boostcamp-sts-v1-test-016,slack-rtt,P&C팀 워크샵 기대됩니다!,P&C 팀 워크샵이 기대됩니다!
+36,boostcamp-sts-v1-test-036,slack-rtt,"저는 나이키 브랜드에서 인피니티런, 인빈서블 2개 사서 데일리런 용도로 돌려신고, 카본화 1개는 기록 달리기 또는 대회 전용으로 신고 있습니다.",나는 Nike 브랜드에서 Infinity Runs와 Invincibles 두 개를 구입하여 매일 달리기를 위해 반품하고 기록 달리기 또는 대회를 위해 하나의 탄소 신발을 반품했습니다.
+69,boostcamp-sts-v1-test-069,slack-rtt,둘중에는 1번을 추천하고 싶고요.,둘 중 하나를 추천합니다.
+72,boostcamp-sts-v1-test-072,slack-rtt,<PERSON> 님과 함께 밥 스테이지를 진행했습니다,<PERSON>님과 함께 밥무대를 진행했습니다.
+73,boostcamp-sts-v1-test-073,slack-rtt,이번주엔 할수있을지 모르겠네요,이번주에 할 수 있을지 모르겠네요.
+81,boostcamp-sts-v1-test-081,slack-rtt,내일 다시 캐취해서 알려드릴게요,내일 또 잡아서 알려드릴께요
+89,boostcamp-sts-v1-test-089,slack-rtt,남은 한 주도 화이팅하세요,남은 한 주 동안 화이팅
+94,boostcamp-sts-v1-test-094,slack-rtt,놀러오세요 자주~~!,자주 놀러오세요~~!
+99,boostcamp-sts-v1-test-099,slack-rtt,Commentor로 두 분께 권한 드렸는데 쓰시는 데 제한은 없는지 확인 부탁드려요~,댓글로 2명에게 허락을 받았는데 사용에 제한이 있는지 확인해주세요~
+103,boostcamp-sts-v1-test-103,slack-rtt,참고로 1등은 1시간 27분… km당 4분 정도에 주파하시는거죠. ㅋㅋ,참고로 1위는 1시간 27분... 1km당 약 4분으로 달린다. ㅋ
+109,boostcamp-sts-v1-test-109,slack-rtt,한동안 덥더니 간만에 비오고 상쾌한 금요일입니다.,한동안 무더위가 이어지더니 잠시 후 비가 그치고 상쾌한 금요일입니다.
+110,boostcamp-sts-v1-test-110,slack-rtt,괄호안에 본명 살려둔게 너무 부끄럽..ㅋㅋ,실명을 괄호로 묶는게 너무 부끄럽네요..
+113,boostcamp-sts-v1-test-113,slack-rtt,세분 젠지V ! ㅋㅋ 스코어 모집요건이 있나욯ㅎㅎ,수분젠지브이! ㅎㅎ 점수모집 조건이 있나요?
+123,boostcamp-sts-v1-test-123,slack-rtt,순간 닮았다는 생각이..,순간 똑같다고 생각했는데..
+126,boostcamp-sts-v1-test-126,slack-rtt,수다쟁이 ENFP 두명이 모여서 한껏 신난 모습입니다,수다스러운 두 ENFP가 한자리에 모여 아주 신이 났어요.
+127,boostcamp-sts-v1-test-127,slack-rtt,추천 감사드립니다!,추천 감사합니다!
+128,boostcamp-sts-v1-test-128,slack-rtt,루이커버리는 실제 모델에 얼굴을 입힌 딥페이크 류입니다 ㅎㅎ,Ruicovery는 실제 모델에 얼굴을 넣는 딥페이크 유형입니다.
+153,boostcamp-sts-v1-test-153,slack-rtt,이러다가 스플릿 스쿼트도 정말 하게 되는게 아닌지..,이것은 당신이 정말로 스플릿 스쿼트를 한다는 것을 의미합니까?
+158,boostcamp-sts-v1-test-158,slack-rtt,짧은 시간이었지만 인사드릴 수 있어서 좋았습니당!!,짧은 시간이었지만 인사드릴 수 있어서 좋았어요!!
+160,boostcamp-sts-v1-test-160,slack-rtt,마음의 고향 한림으로 가겠습니다 ㅋㅋㅋ,"마음의 고향, 한림으로 가겠습니다."
+169,boostcamp-sts-v1-test-169,slack-rtt,특히 채용 외의 주제들로 말씀을 나눌 수 있어서 좋았구요.ㅋㅋ,특히 채용 이외의 주제에 대해 이야기할 수 있어서 좋았습니다.
+185,boostcamp-sts-v1-test-185,slack-rtt,저희 팀 투표 해주세요!,우리 팀에 투표해주세요!
+187,boostcamp-sts-v1-test-187,slack-rtt,셋 다 계획하는 성격인데요.,세 사람 모두 계획적인 성격을 가지고 있습니다.
+190,boostcamp-sts-v1-test-190,slack-rtt,여기서 하시면 스타되심요. ㅋㅋㅋ,여기서 하면 별이 됩니다. 하하하
+209,boostcamp-sts-v1-test-209,slack-rtt,저 위에 링크는 예전꺼입니당!,위의 링크는 오래되었습니다!
+215,boostcamp-sts-v1-test-215,slack-rtt,앞으로도 부끄럼 없이 계속 신세지게될 예정이니 마음의 준비를 단단히 해주시면 감사하겠습니다.,"앞으로도 부끄럽지 않게 많은 빚을 지고 있을 테니, 마음의 준비를 잘 해 주시면 감사하겠습니다."
+216,boostcamp-sts-v1-test-216,slack-rtt,"10여년전에 낄낄거리면서 보았던 기억이 있는데, 여전히 앞에 몇장을 읽는데도 세월만 변했지 내용은 여전히 날이 서있습니다.",10여년 전쯤 킥킥거리며 봤던 기억이 난다. 처음 몇 장을 읽었는데도 세월이 변했을 뿐 내용은 그대로다.
+227,boostcamp-sts-v1-test-227,slack-rtt,사무실/회의실 울림방지를 위해서 이거 붙이면 엄청도움됩니다.,에코를 방지하기 위해 이것을 사무실/회의실에 부착하는 것이 매우 유용합니다.
+232,boostcamp-sts-v1-test-232,slack-rtt,헐 ㅜㅜ 제가 길을 완전 잘못 들어서 저 한 10분쯤 늦을 것 같아요,헐 ㅜㅜ 길을 잘못 들어서 10분 정도 늦은 것 같다.
+238,boostcamp-sts-v1-test-238,slack-rtt,한달 100k도 너무 멋지네요,월 100만원 너무 좋다
+248,boostcamp-sts-v1-test-248,slack-rtt,"개인정보(?) 이슈로 공개할 수 없었던 내용들을 제외하고, 운동관련 얘기를 많이 나누었는데요.",개인정보(?) 문제로 공개하지 못한 내용 외에는 운동에 대한 이야기를 많이 나눴다.
+265,boostcamp-sts-v1-test-265,slack-rtt,소개중 나오는 협력의 진화도 상당히 기대 되네요.,도입부에서 등장하는 협력의 진화도 기대된다.
+273,boostcamp-sts-v1-test-273,slack-rtt,업무에 대한 내용과 앞으로의 방향에 대해서 이야기를 나누었습니다.,업무 내용과 앞으로의 방향에 대해 이야기를 나눴습니다.
+274,boostcamp-sts-v1-test-274,slack-rtt,(아주 맵고 자극적인 라면같은 순두부찌개 ㅋㅋ),(순두부찌개 아주 맵고 자극적인 라면같은 국물)
+281,boostcamp-sts-v1-test-281,slack-rtt,주말 잘 보내세요!,좋은 주말 보내세요!
+292,boostcamp-sts-v1-test-292,slack-rtt,그래서 이럴 땐 오히려 더 숙여서 상대방한테 태클을 넣어 쓰러트린 뒤 공격하는게 최고하는 것을 연구해냈습니다!,그래서 이 경우 가장 좋은 방법은 엎드려 상대를 태클하고 넘어뜨리고 공격하는 방법을 연구해봤습니다!
+304,boostcamp-sts-v1-test-304,slack-rtt,(제가 너무 라떼를 남발한거 아닌지 ㅎㅎㅎ),(내가 라떼를 너무 많이 마시는거 아닌가 ㅋㅋㅋㅋ)
+310,boostcamp-sts-v1-test-310,slack-rtt,참고차 해당 영상도 남깁니다!,참고로 영상도 남깁니다!
+311,boostcamp-sts-v1-test-311,slack-rtt,몸조리 잘하시고 담에 막차 멤버끼리 뒷풀이 한번 하시죠.ㅋㅋ,몸조심하시고 댐에서 막차 멤버들과 만찬을 즐겨보세요.
+328,boostcamp-sts-v1-test-328,slack-rtt,어떻게 하면 쿨한 사람이 될 수 있을까요?,어떻게 하면 멋진 사람이 될 수 있을까요?
+331,boostcamp-sts-v1-test-331,slack-rtt,저는 마음으로 참여!!!,마음으로 참여합니다!!!
+342,boostcamp-sts-v1-test-342,slack-rtt,목장갑 끼고 출동하겠습니다!,장갑 끼고 나갈게!
+345,boostcamp-sts-v1-test-345,slack-rtt,"양심적으로 구독까지는 요청드리지 않습니다,,,","양심적으로 구독신청하지 않습니다,,,,"
+375,boostcamp-sts-v1-test-375,slack-rtt,어제 <PERSON> 님과 함께 스키장을 다녀왔습니다!,어제는 <PERSON>님과 스키장에 다녀왔어요!
+394,boostcamp-sts-v1-test-394,slack-rtt,다른 멤버분들도 언제든 환영입니다!,다른 회원님들은 언제나 환영입니다!
+406,boostcamp-sts-v1-test-406,slack-rtt,"DKT, 추천 관련하여 서로 궁금한 점들에 대해 이야기를 나누었습니다ㅎㅎ","DKT, 추천에 대한 서로의 질문에 대해 이야기했습니다."
+414,boostcamp-sts-v1-test-414,slack-rtt,너무 자연스럽게 업무 이야기로 마무리돼서 사진찍는걸 깜빡했네요,이야기가 너무 자연스럽게 끝나서 사진 찍는 것도 잊었다.
+418,boostcamp-sts-v1-test-418,slack-rtt,가을이 되면 억새로 뒤덮인다,가을이면 억새로 뒤덮인다
+423,boostcamp-sts-v1-test-423,slack-rtt,"서로 하는 일 얘기, 사는 얘기, 투자 얘기, 연애 조언(?) 등등 정신없이 티타임 했던거 같아요 ㅎㅎ","서로의 일 이야기, 구매, 투자, 연애 조언(?) 등.. 미친듯이 티타임을 가졌던 것 같아요 ㅎㅎ"
+429,boostcamp-sts-v1-test-429,slack-rtt,오. 여기 빵 좋아 하시면 좋아하실듯 합니다.,다섯. 빵을 좋아한다면 좋아할 것입니다.
+446,boostcamp-sts-v1-test-446,slack-rtt,둘 다 따뜻한 티를 마시며 이런저런 이야기하는 안온한 시간이었습니다,따뜻한 차를 마시며 이런저런 이야기를 나누던 조용한 시간이었습니다.
+449,boostcamp-sts-v1-test-449,slack-rtt,오. 유명 유투버 영상이 추천으로 나왔습니다. 고고!!,다섯. 추천으로 유명 유튜버 영상이 나왔다. 고고!!
+450,boostcamp-sts-v1-test-450,slack-rtt,사람을 만나는게 재미있긴 하지만 역시 재택이 짱이다...!,사람 만나는 것도 즐겁지만 집에 있는 게 최고야...!
+459,boostcamp-sts-v1-test-459,slack-rtt,네 어제 정말 즐거운 시간있습니다.,네 어제 정말 잘 보냈습니다.
+461,boostcamp-sts-v1-test-461,slack-rtt,덕분에 꽤 장기간을 댁에서 보내시며 나름 소소한 즐거움을 찾고 계시다는 말씀을 들었습니다.,덕분에 집에서 꽤 오랜 시간을 보내며 소소한 즐거움을 찾고 있다고 들었다.
+476,boostcamp-sts-v1-test-476,slack-rtt,역시 여기가 꿀정보 중심지..!!!,역시나 꿀정보의 중심지..!!!
+503,boostcamp-sts-v1-test-503,slack-rtt,역시 좁은 이바닥 ㅋㅋ,바닥도 좁습니다.
+509,boostcamp-sts-v1-test-509,slack-rtt,업무에 도움이 되더라...,업무에 도움이 되었습니다...
+530,boostcamp-sts-v1-test-530,slack-rtt,특히 최근 주로 하고 있는 러닝..,특히 최근에 주로 하고 있는 런닝...
+536,boostcamp-sts-v1-test-536,slack-rtt,아주 좋습니당 ㅎㅎ,아주 좋아 하하
+537,boostcamp-sts-v1-test-537,slack-rtt,(참고하세요 ㅎㅎ ),(참고하하하)
+541,boostcamp-sts-v1-test-541,slack-rtt,부트캠프 이벤트 기획 할 때 잘 녹여내보겠습니다.,부트캠프 행사를 기획할 때 잘 녹여내도록 하겠습니다.
+547,boostcamp-sts-v1-test-547,slack-rtt,무엇보다 가사가 정말 좋은 것 같아요,무엇보다 가사가 정말 좋은 것 같아요.
+553,boostcamp-sts-v1-test-553,slack-rtt,모두들 축하드립니다! 업업업!,모두 축하합니다! 위로!
+555,boostcamp-sts-v1-test-555,slack-rtt,"간만에 뵈었는데 다짜고짜 일얘기를 많이 드려 죄송했지만, 여러가지 좋은 피드백을 주셔서 또한번 도움을 받았습니다.",오랜만에 뵙고 많은 이야기를 해서 죄송하지만 좋은 피드백을 많이 주셔서 다시 도움을 드릴 수 있었습니다.
+565,boostcamp-sts-v1-test-565,slack-rtt,부트캠프 3기에서는 여러 짤과 이모지도 만들어져서 사용되고 있을만큼 인기가 아주 많은데요.,3차 부트캠프에서는 여러 밈과 이모지를 제작하여 사용하여 많은 인기를 얻고 있습니다.
+572,boostcamp-sts-v1-test-572,slack-rtt,이렇게 지낼 수도 있다고 합니다.,이렇게 살 수도 있습니다.
+585,boostcamp-sts-v1-test-585,slack-rtt,우리 회사 외에도 주변에 혹시 채용에 관심 있는 분들이 계시다면 공유해주시면 감사하겠습니다!,회사 외부에서 채용에 관심이 있는 다른 사람들이 주변에 있다면 공유해 주시면 감사하겠습니다!
+593,boostcamp-sts-v1-test-593,slack-rtt,imac 가격을 보니 우리 사무실 모니터가 비싸긴 비싸다는 생각이,아이맥 가격을 보니 저희 사무실 모니터가 비싸다는 생각이 들었습니다.
+597,boostcamp-sts-v1-test-597,slack-rtt,6월부터 새벽에도 슬랙 불이 켜져있을거같은..,6월부터 새벽에도 슬랙라이트가 켜질듯..
+611,boostcamp-sts-v1-test-611,slack-rtt,오우.. <PERSON>!! 감사해요!!,아.. <PERSON>!! 고맙습니다!!
+618,boostcamp-sts-v1-test-618,slack-rtt,역시 쉬워야 확장성이.,또한 확장이 쉬워야 합니다.
+623,boostcamp-sts-v1-test-623,slack-rtt,"본격 워크샵 전에 당연히 4진실1거짓 게임으로 완벽한 아이스브레이킹 후 환상적인 논의들, 환상적인 점심, 환상적인 산책, 환상적인 논의까지~~","본격적인 워크샵 전은 물론, 4진 1 거짓, 환상의 토론, 환상의 점심, 환상의 산책, 환상의 토론으로 완벽한 쇄빙 게임 후."
+624,boostcamp-sts-v1-test-624,slack-rtt,특히 올해는 시간이 정말 빨리 가는 것 같다는 이야기도 나눴네요ㅎㅎ,특히 올해는 시간이 정말 빨리 가는 것 같다는 이야기를 나눴다.
+626,boostcamp-sts-v1-test-626,slack-rtt,"요즘 제 인생에서 가장 많은 지분을 차지하고 있는 매일매일 보는 두 분인데도, 언제 봐도 너무 즐겁고 찐으로 행복하네요",요즘 내 인생에서 가장 많은 부분을 차지하는 두 사람이 매일 마주하고 있지만 볼 때마다 너무 행복하고 행복하다.
+636,boostcamp-sts-v1-test-636,slack-rtt,우와 사진을 보니 어제의 흥이 다시 스멀스멀~~!,우와 사진만 봐도 어제의 설렘이 또 소름돋네요!
+647,boostcamp-sts-v1-test-647,slack-rtt,그 와중에 울 냥냥 시강,그 사이 흐느끼는 냥냥시강
+650,boostcamp-sts-v1-test-650,slack-rtt,항상 에너지 넘치는 <PERSON> 와 함께 긴 잡담의 시간을 가졌습니다!,항상 에너지 넘치는 <PERSON>님과 긴 대화를 나눴습니다!
+652,boostcamp-sts-v1-test-652,slack-rtt,"곧 있을 30-60-90도 화이팅하시고, 서울 올라오시면 꼭 뵈어요",곧 30-60-90도 화이팅하시고 서울에 오시면 만나요
+669,boostcamp-sts-v1-test-669,slack-rtt,오우 두 분 다 환한 미소,오 두 분 다 해맑은 미소
+675,boostcamp-sts-v1-test-675,slack-rtt,급하게 사진찍다보니 마우스 위치가 절묘하게 저기에 올라갔네요 …ㅋㅋ,사진찍느라 급해서 마우스 위치가 절묘하게 저기에..ㅋㅋㅋㅋ
+678,boostcamp-sts-v1-test-678,slack-rtt,수내동 무슨일이? ㅠㅠ,수내동에 무슨 일이? ㅠㅠ
+682,boostcamp-sts-v1-test-682,slack-rtt,어머 여기 너모 대박이네요.,"세상에, 당신은 여기에서 굉장합니다."
+686,boostcamp-sts-v1-test-686,slack-rtt,<PERSON> 님 안녕하세요!,안녕하세요 <PERSON>님!
+688,boostcamp-sts-v1-test-688,slack-rtt,입장료가 있지만 소전서림 정말 좋아요..!!!,입장료가 있지만 소전서림이 너무 좋아요..!!!
+695,boostcamp-sts-v1-test-695,slack-rtt,제 계정 잠시 사용하셔도 됩니다!,잠시 내 계정을 사용할 수 있습니다!
+698,boostcamp-sts-v1-test-698,slack-rtt,다행히 열매 안떨어지고 잘 왔네요 ㅋㅋ,다행히 열매가 떨어지지 않고 잘 왔습니다.
+704,boostcamp-sts-v1-test-704,slack-rtt,어도비 홈페이지 찾아보니까 아래와 같은 안내가 있더라구요~,Adobe 웹 사이트를 검색하여 다음 정보를 찾았습니다.
+713,boostcamp-sts-v1-test-713,slack-rtt,사진에 둘다 매우? 심각..합니다. ㅎㅎ,사진에서 둘 다 아주? 진심... 헤헤
+717,boostcamp-sts-v1-test-717,slack-rtt,서로 알아갈 수 있는 좋은 시간이었습니다,서로를 알아가는 좋은 시간이었습니다
+718,boostcamp-sts-v1-test-718,slack-rtt,(물론 짤과 이모지를 만든 캠퍼분께 허락 받았습니다!),(물론 밈과 이모티콘을 만든 캠퍼에게 허락을 받았습니다!)
+719,boostcamp-sts-v1-test-719,slack-rtt,그럴 수도 있는데 혹시 모르니..!,그럴수도 있지만 혹시 모르니..!
+727,boostcamp-sts-v1-test-727,slack-rtt,"뇌신경학자가 쓴 책인데, 영상 내용을 포함한 전반적인 뇌/지능에 대해 비전공자가 읽을 수 있게 쓴 책입니다.","이 책은 신경과학자가 집필한 책으로, 영상 콘텐츠를 포함한 뇌/지능 전반에 대해 비전문가도 읽을 수 있는 책이다."
+728,boostcamp-sts-v1-test-728,slack-rtt,이거 엄청비싸던데!,이것은 매우 비싸다!
+730,boostcamp-sts-v1-test-730,slack-rtt,어쩌다보니 마무리는 또 영입관련 이야기로 정리가 되었습니다.,어쩐지 모집에 대한 이야기로 엔딩이 끝났다.
+735,boostcamp-sts-v1-test-735,slack-rtt,예상 코스: 양재천에서의 점심및 산책 후 테라스가 있거나 벚꽃이 보이는 카페에서의 코워킹!,"예상코스: 점심식사 후 양재천 산책, 테라스가 있는 카페에서 코워킹, 벚꽃구경!"
+737,boostcamp-sts-v1-test-737,slack-rtt,우리 토마토 이렇게 키워야지,우리는 이렇게 토마토를 키워야 합니다.
+743,boostcamp-sts-v1-test-743,slack-rtt,다들 환영해주셔서 감사합니다 :),모두 환영해주셔서 감사합니다 :)
+746,boostcamp-sts-v1-test-746,slack-rtt,<PERSON> 가끔 초대 주세요ㅋㅋㅋ,<PERSON> 가끔 불러주세요 ㅎㅎ
+753,boostcamp-sts-v1-test-753,slack-rtt,두 분 행보카세요!!,두 분!
+755,boostcamp-sts-v1-test-755,slack-rtt,저도 어제 후다닥 바꾸고 왔네요!,저도 어제 앞뒤로 바꿨어요!
+757,boostcamp-sts-v1-test-757,slack-rtt,달리기하고 와서 좀 후들거리긴 했지만….,달릴때 좀 흔들렸지만....
+758,boostcamp-sts-v1-test-758,slack-rtt,이번달이 PR 이 조금 많긴했습니다.,이번 달은 약간의 PR이었습니다.
+762,boostcamp-sts-v1-test-762,slack-rtt,"튜토리얼 따라서 구름 추가도 해봤습니다 (1, 2번 사진)","튜토리얼에 따라 구름도 추가했습니다(그림 1, 2)"
+764,boostcamp-sts-v1-test-764,slack-rtt,장인은 아니고 아마추어들이 직접 로스팅한 커피들을 이것저것 먹어봤다는 정도로.. ㅎㅎ,장인이 아닌 아마추어가 직접 로스팅한 커피를 맛본 정도..ㅋㅋㅋ
+776,boostcamp-sts-v1-test-776,slack-rtt,허리에 안좋다고 합니다,허리에 안좋다
+808,boostcamp-sts-v1-test-808,slack-rtt,속성들은 자유로이 바꿔 주셔도 됩니닷!,속성을 자유롭게 변경할 수 있습니다!
+809,boostcamp-sts-v1-test-809,slack-rtt,고고. 담당자연락 부탁드리겠습니다.,고고. 담당자에게 문의하시기 바랍니다.
+811,boostcamp-sts-v1-test-811,slack-rtt,잎이 반짝반짝하네요~,나뭇잎이 빛나고 있어!
+817,boostcamp-sts-v1-test-817,slack-rtt,오.. 좋은 취지네요.,"오, 좋은 생각이네요."
+819,boostcamp-sts-v1-test-819,slack-rtt,"요즘 제가 책상 꾸미기에 관심이 많아서 모니터와 근무 환경에 이것저것 물어보는 시간을 가졌는데, 엄청난 고수의 향기가 느껴졌습니다 ㅎㅎ","요즘은 책상 꾸미기에 관심이 많아서 모니터와 작업 환경에 대해 질문하는 시간을 가졌는데, 좋은 고수 향을 느꼈습니다."
+823,boostcamp-sts-v1-test-823,slack-rtt,무슨말을 쓸까....,무엇을 쓸까...
+828,boostcamp-sts-v1-test-828,slack-rtt,"새삼 졸업 뭐 그냥 하는건데 생각해서, 안갈까도했지만 막상가니 기분이 요상!!",다시한번 말씀드리지만 졸업은 그냥 하는거라서 안갈줄 알았는데 막상 가보니 대단하네요!!
+837,boostcamp-sts-v1-test-837,slack-rtt,유부남 모임 한 번 만들어야겠군요 ㅋㅋ,유부남 모임을 해야겠습니다.
+845,boostcamp-sts-v1-test-845,slack-rtt,아주 맛있게 먹었습니다.,그것은 매우 맛있었습니다.
+863,boostcamp-sts-v1-test-863,slack-rtt,퇴근 후의 멋진 그 계획!!진짜완전 응원해요!!,퇴근 후 그 멋진 계획!! 정말 응원합니다!!
+865,boostcamp-sts-v1-test-865,slack-rtt,쿨한 답변에 명료한 솔루션을 받아 왔습니다!,시원시원한 답변으로 명쾌한 답을 얻었습니다!
+881,boostcamp-sts-v1-test-881,slack-rtt,이 버전을 몰랐다니 팬으로서 부끄럽군요,팬으로서 이 버전을 몰랐다는 것이 부끄럽습니다.
+882,boostcamp-sts-v1-test-882,slack-rtt,헐 엄청나네요 ㄷㄷ,헐 대단하다
+887,boostcamp-sts-v1-test-887,slack-rtt,"강동, 송파 쪽에 거주하시는 다른 분들과 함께 같이 식사 한 번 하면 좋겠다는 아이디어를 나누었습니다.",강동과 송파에 사는 사람들과 함께 식사를 하자는 생각을 나눴다.
+892,boostcamp-sts-v1-test-892,slack-rtt,소파 위에서 방방 ㅋㅋ,소파 위의 방 ㅋㅋㅋㅋ
+899,boostcamp-sts-v1-test-899,slack-rtt,잔잔하게 듣기 좋은 팝송 모음이네요. 커피와 함께 ~!,듣기 편한 팝송 모음집입니다. 커피와 함께!
+903,boostcamp-sts-v1-test-903,slack-rtt,와 이건 정말… ㅎㅎ 그 좋은 게임도 정떨어지게 할 수 있는 비법 레시피 ㅎㅎ,와 이건 진짜...ㅋㅋㅋ 그 좋은 게임도 미치게 만드는 비법 ㅋㅋㅋㅋ
+906,boostcamp-sts-v1-test-906,slack-rtt,가장많이 쓰는 리눅스 명령이이기도 합니다ㅎㅎㅎ,또한 가장 많이 사용되는 Linux 명령입니다.
+913,boostcamp-sts-v1-test-913,slack-rtt,설레는 하루 보내고 계신가요?,신나는 하루 보내고 계신가요?
+919,boostcamp-sts-v1-test-919,slack-rtt,공교롭게도 지금은 인계동이 아닙니다ㅋㅋ,공교롭게도 지금은 인계동이 아니다.
+922,boostcamp-sts-v1-test-922,slack-rtt,"여기가 좋다, 저기가 좋다 하다보니 시간이 순식간에 갔네요.",이곳도 좋고 저곳도 마음에 들어서 시간이 훌쩍 가버렸습니다.
+934,boostcamp-sts-v1-test-934,slack-rtt,"즐거웠던 현장, 사진+보너스 영상으로 공유 드립니다.",재미있는 장면을 사진 + 보너스 영상으로 공유합니다.
+937,boostcamp-sts-v1-test-937,slack-rtt,많이 사고 겹치게 쓴다 전략입니다,많이 사서 겹쳐서 사용하는 전략입니다.
+951,boostcamp-sts-v1-test-951,slack-rtt,(면봉을 코에 깊게 찌르는 방식으로),(면봉을 코 깊숙이 삽입하여)
+958,boostcamp-sts-v1-test-958,slack-rtt,꾸준한 운동 기원해 봅니다. ㅎㅎ,규칙적인 운동을 위해 기도하십시오. 헤헤
+961,boostcamp-sts-v1-test-961,slack-rtt,"심심하실 때 저희 언니가 새로 만들고 있는 유투브 예능 한 번 방문해보시면 어떨까요,,,","심심할 땐 언니가 만들고 있는 유튜브 예능 보러가는거,,,,"
+962,boostcamp-sts-v1-test-962,slack-rtt,10월에 도전합니다.,10월에 해봐야겠습니다.
+979,boostcamp-sts-v1-test-979,slack-rtt,이거 들으면서 보시면 더 대박!,들으면서 보면 더 좋습니다!
+982,boostcamp-sts-v1-test-982,slack-rtt,"너무 잘 웃어주시고, 즐거운 대화였습니다.",많이 웃으셨고 즐거운 대화였습니다.
+987,boostcamp-sts-v1-test-987,slack-rtt,(ex: 국물 우리고 난 멸치),(ex: 육수와 멸치)
+994,boostcamp-sts-v1-test-994,slack-rtt,어떤 분께 문의드리면 될까요?,누구에게 연락할 수 있습니까?
+1000,boostcamp-sts-v1-test-1000,slack-rtt,전 정확하게 말하자면 비건베이킹...에 관심이 많아요..!,정확히는 비건 베이킹에 관심이 많아요...!
+1001,boostcamp-sts-v1-test-1001,slack-rtt,커피 좋아하시는 분들 부산 모모스커피 원두나 드립백 주문해서 드셔보세요 ㅎㅎ,커피를 좋아한다면 부산모모스커피 원두나 드립백을 주문해보세요.
+1005,boostcamp-sts-v1-test-1005,slack-rtt,오 고객님ㅋㅋㅋ 관심있으시다,오 고객님 ㅎㅎ 관심이 가네요
+1013,boostcamp-sts-v1-test-1013,slack-rtt,재택 이후로 보지 못해서 너무 슬퍼요..,집 이후로 당신을 보지 못해서 너무 슬픕니다.
+1019,boostcamp-sts-v1-test-1019,slack-rtt,아침 일찍이라 그런거 아닐까요? ㅋㅋㅋ,이른 아침이라 그럴까요? 하하하
+1020,boostcamp-sts-v1-test-1020,slack-rtt,제가 어디로 언제 가면 될까요? ㅋㅋ,언제 어디로 갈 수 있나요? ㅋ
+1025,boostcamp-sts-v1-test-1025,slack-rtt,"지진 순간에는 일단 식탁아래 몸 숨기고, 얼른 신발 신고, 현관문 열고.. 하던 어린 시절 생각나네요.",지진의 순간에 처음 탁자 밑에 숨어 신발을 신고 현관문을 열던 어린 시절이 떠오른다.
+1040,boostcamp-sts-v1-test-1040,slack-rtt,지금 넘처나는 유동성 파도에 이 한 몸 던질 이유를 한번 더 각인시킬 수 있는 좋은 대화였습니다,이 한 몸을 흘러넘치는 물결에 던지는 이유를 다시 한 번 감동시킬 수 있는 좋은 대화였다.
+1044,boostcamp-sts-v1-test-1044,slack-rtt,"오...! 그렇다면 커피 좋아하시는 분들과 함께,,, 한번 골라보도록 하겠습니다",다섯...! 그런 다음 커피 애호가와 함께 하나를 선택합시다.
+1051,boostcamp-sts-v1-test-1051,slack-rtt,"티셔츠는 이제 가을이 되어서 새 디자인으로 리뉴얼해야할 것 같은데, 저희 곧 로고나 상징컬러가 변경될 예정이라 변경되고 새로 제작해야할 것 같습니다~!","티셔츠는 이제 가을이라 새로운 디자인으로 리뉴얼해야 할 것 같지만, 곧 저희 로고나 심볼 컬러가 바뀔 예정이라 새롭게 바꿔서 제작해야 할 것 같습니다~!"
+1052,boostcamp-sts-v1-test-1052,slack-rtt,ㅎㅎ 번개는 원래 안되는분들 빼고 보는것이긴 한데.. ㅎ,ㅎㅎ 번개 못보신분들만.. 헤헤
+1056,boostcamp-sts-v1-test-1056,slack-rtt,오늘은 드디어 외부 미팅이 없기 때문이다.,오늘 드디어 외부 회의가 없기 때문입니다.
+1063,boostcamp-sts-v1-test-1063,slack-rtt,항상 요맘때쯤 비가와서 아쉬웠는데 이번 봄은 벚꽃 개나리 진달래가 모두 한자리에 모여있는 햅삐 스프링 다른 지역분들을 위해 집앞 벚꽃 사진 첨부합니다..,"이맘때쯤 비가 와서 아쉬웠는데, 이번 봄, 벚꽃, 개나리, 만개한 벚꽃이 만발하는 합피봄에 여러분을 위해 집 앞 벚꽃 사진을 첨부합니다. 진달래가 한 곳에 모여 있습니다."
+1074,boostcamp-sts-v1-test-1074,slack-rtt,여기 진짜 최고입니다..!,이거 진짜 최고..!
+1076,boostcamp-sts-v1-test-1076,slack-rtt,저도 데스커 쓰는데 좋아요,데스커를 사용하는 것도 좋아요
+1080,boostcamp-sts-v1-test-1080,slack-rtt,넘치는 에너지의 기운을 나눠받을 수 있는 좋은 시간이었습니다,넘치는 에너지의 에너지를 나누는 좋은 시간이었습니다.
+1088,boostcamp-sts-v1-test-1088,slack-rtt,방금올린 홍콩 세기 1위 식당은 회식은 아니고 개인맛집 투어인데… 잘못 올린듯요. ㅋㅋ,제가 방금 포스팅한 홍콩세기 1호 맛집은 만찬이 아니라 단독식당 투어... ㅋ
+1091,boostcamp-sts-v1-test-1091,slack-rtt,아래 질문에 대해서 어떻게 생각하시나요?,아래 질문에 대해 어떻게 생각하십니까?
+1094,boostcamp-sts-v1-test-1094,slack-rtt,분위기 너무 좋네요.,분위기가 너무 좋습니다.
+9,boostcamp-sts-v1-test-009,slack-sampled,빛을 쏟는 스까이아이아이아이야이야~,빛을 쏟는 스까이아이아이아이아이야~
+18,boostcamp-sts-v1-test-018,slack-sampled,오늘 너무 즐거웠습니다~!,오늘 너무 즐거웠습니다~~
+21,boostcamp-sts-v1-test-021,slack-sampled,<PERSON> 와의 만남!,<PERSON> 와의 만남을 되게 기대했었는데 역시나 기대 이상이었습니다.
+22,boostcamp-sts-v1-test-022,slack-sampled,"여러가지 즐겁게 이야기 할 수 있었는데, 나중에 기회되면 또 뵙고 이야기 나누어요!",나중에 혹시나 독립하게 되면 여러가지 또 여쭙도록 하겠습니다!
+23,boostcamp-sts-v1-test-023,slack-sampled,제가 있던 카페에서 파는 피자와 파스타를 시켰는데 너무 맛있어서 다들 깜놀 했습니다.,"인근에 있는 가베도라는 카페를 갔었는데, 전통 찻집 분위기가 나서 너무 좋았습니다."
+24,boostcamp-sts-v1-test-024,slack-sampled,워크샵 장소 마지막 투표 합니다!,세부 워크샵 프로그램은 우선 워크샵 진행방식 투표 결과를 본 뒤 짜볼 예정인데요.
+51,boostcamp-sts-v1-test-051,slack-sampled,제가 잘 설명 드렸는지 모르겠네요 ㅋㅋㅋ,요건 잘 모르겠네요 )
+59,boostcamp-sts-v1-test-059,slack-sampled,정말 놀라운 인연이었어요!!,엄청난 인연이네요…
+62,boostcamp-sts-v1-test-062,slack-sampled,특히 제가 질문이 많았는데요ㅎㅎ,제가 올린 질문인데… ㅋㅋ
+67,boostcamp-sts-v1-test-067,slack-sampled,상현 오피스에서 시켜먹으면 좋을만한 배달맛집 추천 부탁드려요!,상현오피스에 옛날 로고 우리 회사 옷 가져다 놓으신 분 찾습니다
+70,boostcamp-sts-v1-test-070,slack-sampled,시원한 곳을 찾다가 우연히 발견한 와이너리..,오늘 우연히 습득한 TMI
+84,boostcamp-sts-v1-test-084,slack-sampled,저도 궁금해서 직접 문의 해보니 잡으시던 백합조개를 직접 보여주셨습니다.,찾아보니 “그랭이“라는 도구로 백합조개 또는 범게 잡는데 쓰는 것 같습니다.
+87,boostcamp-sts-v1-test-087,slack-sampled,그러다보면 언젠간 좋아지겠죠...,오... 좋죠...
+90,boostcamp-sts-v1-test-090,slack-sampled,너무너무 즐거웠습니다!!,너무 즐거웠습니다~!
+97,boostcamp-sts-v1-test-097,slack-sampled,ㅎㅎ 완전 운이 좋았던거더라구요,전 오늘은 운이 좋았네요.
+98,boostcamp-sts-v1-test-098,slack-sampled,웹드라마의 한장면 감상하고 가시죠;;,비내리는 홍콩의 폭포 영상과 소리 감상하세요.
+102,boostcamp-sts-v1-test-102,slack-sampled,다음에 또 만나요~,다음에 또 만나요~~ ㅎㅎ
+104,boostcamp-sts-v1-test-104,slack-sampled,모두 감사드립니다 ^^,다들 고맙습니다~~
+105,boostcamp-sts-v1-test-105,slack-sampled,ㅋㅋ저도 너무 제 스탈 만우절,"_만우절이라서 그런지는 모르겠지만_, 오늘 우리 회사 맨투맨입고 출근했어요 ㅎㅎ.."
+106,boostcamp-sts-v1-test-106,slack-sampled,주변에 '이사람이 딱이다!' 싶은 좋은 분들 있으면 언제든 로 연락 부탁드립니다!!,이 사람은 완벽하다!' 원하시는 좋은 분들이 계시다면 언제든지 연락주세요!!
+108,boostcamp-sts-v1-test-108,slack-sampled,ㅎㅎㅎ 보고 많이 즐거웠습니다.,저도 즐거웠고 많이 배웠습니다.
+125,boostcamp-sts-v1-test-125,slack-sampled,ㅋㅋ 비욘드 미트 버거 입니다.,비욘드미트로 만든 버거 포함 여러 파스타와 플레이트 메뉴도 아주 맛있었어요.
+133,boostcamp-sts-v1-test-133,slack-sampled,생성 완료했숩니다!,생성 및 초대 완료~!
+142,boostcamp-sts-v1-test-142,slack-sampled,넵 확인 감사합니다!!,넵!ㅋㅋ 감사합니다~!
+146,boostcamp-sts-v1-test-146,slack-sampled,먼저 메일로 소식도 알려달라고 말씀해주셔서 감사했습니다!,일방적으로 제가 질문하는 시간이었음에도 친절하게 경험을 공유해주셔서 정말 감사했습니다~
+147,boostcamp-sts-v1-test-147,slack-sampled,어바웃 타임 다시 보고 싶네요.,어바웃어보이를 안본 제 잘못입니다..
+151,boostcamp-sts-v1-test-151,slack-sampled,<PERSON> 님과 처음으로 이야기를 나누었습니다.,<PERSON> 님과 처음으로 이야기 나누었습니다!
+163,boostcamp-sts-v1-test-163,slack-sampled,다들 밥과 술에 바빠 사진을 못 찍었네요.,커피 사진은 못 찍었네용.
+180,boostcamp-sts-v1-test-180,slack-sampled,맛있는 곳 찾아주셔서 감사합니당,맛있는 곳 찾아주시고 웨이팅도 기다려주셔서 감사합니다
+191,boostcamp-sts-v1-test-191,slack-sampled,많은 관심과 참여 부탁드려요~,주변에 많은 홍보 부탁드려요!
+199,boostcamp-sts-v1-test-199,slack-sampled,학교 이야기를 하다가 결국 ai stages 이야기로 끝이 났습니다,aistages 팀도 곧 무지 바빠질 예정..
+203,boostcamp-sts-v1-test-203,slack-sampled,<PERSON> 이 만드신 '30분 주기'의 효과는 엄청 났어요. ㅋㅋㅋ,<PERSON>으로 부터 ‘잘했어요’도장 받으셨네요! ㅋㅋ
+204,boostcamp-sts-v1-test-204,slack-sampled,시험기간이 겹쳐서 바쁘셨는데 학업과 업무를 병행하는게 정말 대단하신 것 같습니다,학업과 일 모두 병행하시느라 넘 고생많으신 것 같은... 화이팅입니다!
+207,boostcamp-sts-v1-test-207,slack-sampled,진짜 고민이 무색하게 표정이 너무 해맑으시네요 ㅋㅋ,너무 해맑게 달려 올라오시네요 ㅋㅋ
+212,boostcamp-sts-v1-test-212,slack-sampled,당근멈춰 이모지가 어디서 생긴거죠 ㅋㅋㅋ,ㅋㅋ 이런 좋은 이모지가 있었네요
+218,boostcamp-sts-v1-test-218,slack-sampled,Q. 우리 스타의 최애 반려식물을 자랑해주세요!,우리 스타의 일상 속 ‘함께하는 반려식물’에 대한 화두를 던져봅니다.
+229,boostcamp-sts-v1-test-229,slack-sampled,크 나중에 한잔 하시죵 ㅎㅎㅎ,클하 좋네요 ㅎㅎㅎ
+234,boostcamp-sts-v1-test-234,slack-sampled,오랜만에 서울 중심부오니 사람많아서 현기증나네요 ..ㅋㅋ,애플 기기 처음으로 탐나네요..
+237,boostcamp-sts-v1-test-237,slack-sampled,다음에 기회 되면 또 떠들어요!,다음에 기회되면 또 식사해요~ ㅋ
+239,boostcamp-sts-v1-test-239,slack-sampled,맨날 업무 이야기만 하다가 즐겁게 이야기할 수 있어서 좋았습니다.,항상 바쁘게 뛰어다니실텐데 단독으로 얘기 나눠볼 수 있어서 좋았습니다.
+240,boostcamp-sts-v1-test-240,slack-sampled,27인치 모니터 두개 사는 것 보다 32인치 4K(5K) 사는 것이 더 좋을수도 있습니다.,32인치 4k 로도 한 번 알아봐야겟네용
+243,boostcamp-sts-v1-test-243,slack-sampled,오 대박 감사합니다,오 대박 감사합니다 !! ㅎㅎ
+251,boostcamp-sts-v1-test-251,slack-sampled,"오늘 새로 오신 분들이 많은데, 뜨거운 박수로 따듯하게 맞이해주시면 감사하겠습니다.",많은 분들이 참가해주셔서 같이 축하해 주시면 감사하겠습니다.
+267,boostcamp-sts-v1-test-267,slack-sampled,회의 시간이지만 다음에 또 뵙기로하며 마무리했습니다!,다음에 또 차 마시면서 이야기 하기로 하면서 마무리했습니다!
+268,boostcamp-sts-v1-test-268,slack-sampled,Silver lining이 거창한게 아니고 일상적인 현상이듯 AI 기술도 일상 속에서 사람들에게 선한 영향을 줄 것입니다.,Silver lining! 구름 뒤에 있는 은빛 테두리를 통해 햇빛의 존재를 연상하고 긍정적인 사고를 할 수 있습니다.
+269,boostcamp-sts-v1-test-269,slack-sampled,저는 뜨는 해 지는 해보며 멍 때리기 좋아해요.,저는 조금 더 생생한 느낌을 좋아해서..
+276,boostcamp-sts-v1-test-276,slack-sampled,모두 반가웠습니다.,유쾌한 대화 나누어서 반가웠습니다!
+278,boostcamp-sts-v1-test-278,slack-sampled,다음에는 게임 속 칼바람 나락에서 만나기로 했습니다.,기회가 되면 칼바람 나락에서 만나기로 하며 대화를 마무리했습니다.
+285,boostcamp-sts-v1-test-285,slack-sampled,<PERSON> 님 만났습니다!,<PERSON>님과 티타임 가졌습니다!
+297,boostcamp-sts-v1-test-297,slack-sampled,코멘트에 대충 무엇을 하고 싶은지 적으면 더 잘 완성해줍니다.,프로젝트 진행이나 더 나은 업무 환경을 위해 고민하신다면 일독을 권해드립니다. ㅎㅎ
+308,boostcamp-sts-v1-test-308,slack-sampled,1화는 특히 이소라의 노래와 토크가 가득해서 좋은 것 같아요.,유튜브에 이소라의 프로포즈가 모두 리마스터링되어서 올라와 있네요.
+309,boostcamp-sts-v1-test-309,slack-sampled,역시 우리 회사 최고의 후기 장인!,역시 든든한 우리 회사 대들보
+318,boostcamp-sts-v1-test-318,slack-sampled,오우 축하드립니다..!,오 축하드립니다. !
+321,boostcamp-sts-v1-test-321,slack-sampled,식초는 배타카로틴 망가트림,껍찔채 먹기 (베타카로틴 풍부)
+323,boostcamp-sts-v1-test-323,slack-sampled,같이 한판 하시죠 ㅎㅎ,둘이서 하는 걸로 ㅋ
+329,boostcamp-sts-v1-test-329,slack-sampled,커뮤니케이션을 전담하는 제 입장에서 천군만마가 생긴듯 합니다!,앞으로 SNS를 통한 대외 커뮤니케이션도 많은 기대 부탁드립니다!
+333,boostcamp-sts-v1-test-333,slack-sampled,다음에 또 얘기 나눠요!,다음에 또 얘기 나눠요~
+337,boostcamp-sts-v1-test-337,slack-sampled,헐 콜라 너무 귀여워용,배경이 둘다 너무 귀여운거 아닌가요
+344,boostcamp-sts-v1-test-344,slack-sampled,오늘의 배경화면입니다~,오늘의 배경화면입니다.
+346,boostcamp-sts-v1-test-346,slack-sampled,곧 오피스 출근해서 뵙고 식사해요,저도 기회 되면 강남 오피스 방문해서 일하다 식사 같이 하면 좋겠네요 ㅋㅋㅋ
+354,boostcamp-sts-v1-test-354,slack-sampled,시간적으로 여유되시는 분들 추천합니다..ㅎ ㅎ,업무기기 예산 부럽습니다. ㅎㅎ
+368,boostcamp-sts-v1-test-368,slack-sampled,모든 말 끝에 ‘~~~~ 아요오오오옷!!!’ 을 붙이면 된다고 하시네요?,요것도 있잖아요오오옷!!!!
+374,boostcamp-sts-v1-test-374,slack-sampled,그리고 재택으로 출근이 쉬우니 기상시간도 많이 달라지는 것 같습니다.,재택으로 활동이 줄다보니 더 끼니를 안 챙겨먹는 것 같네요.
+381,boostcamp-sts-v1-test-381,slack-sampled,앗 이건 박명수의 황진이 춤아닌가요..ㅎㅎ,앗 그랬으면 좋겠지만 ㅎㅎㅎ 춤은 제 로망과 관련있습니당... ㅎㅎ
+387,boostcamp-sts-v1-test-387,slack-sampled,제목에서 확 와닿아서 일단 질러보았는데요,업어키운.. ㅎㅎ 확 와닿네요..
+392,boostcamp-sts-v1-test-392,slack-sampled,한번만 다시 추가해주시면 감사드리겠습니다!,10분정도 늦춰주시면 감사드리겠습니다!
+399,boostcamp-sts-v1-test-399,slack-sampled,노션가이드를 바꾸면 될 것 같아요.,노션의 어머니. 노션 도입은 신의 한수?
+400,boostcamp-sts-v1-test-400,slack-sampled,나중에 기회되면 노하우 전수 부탁드립니다!,기회가 되면 식집사님 노하우도 배워보도록 하겠습니다.
+421,boostcamp-sts-v1-test-421,slack-sampled,항상 감사합니다~!!,모두 감사드립니다~~!
+424,boostcamp-sts-v1-test-424,slack-sampled,그래서 네이밍 표기의 통일에 있어 호칭 영어 표기 + (본명 자국어 표기)로 통일하면 어떨지 방향을 찾아봤습니다.,업무툴의 네이밍 표기를 “호칭 영어표기(본명 자국어 표기)로 통일한다
+436,boostcamp-sts-v1-test-436,slack-sampled,네 딱 잘맞숩니다!,맞습니다맞습니다 두근
+439,boostcamp-sts-v1-test-439,slack-sampled,네. 감사합니다..,크.. 진짜 늘 감사합니다.
+454,boostcamp-sts-v1-test-454,slack-sampled,진짜 맛있어서 3장 호로록했어요!,진짜 맛있었어서 또 가구 싶어요 ㅎㅎ
+460,boostcamp-sts-v1-test-460,slack-sampled,이런건 또 공유해야죠..!!,다음에 또 매칭되길 바라요....!
+486,boostcamp-sts-v1-test-486,slack-sampled,격렬했던 이번 한 주 보내시느라 모두 모두 고생하셨습니다.,"더위에 바쁜 일과 보내시느라 모두 고생인데, 부디 각자의 방식으로 보양하시기 바랍니다"
+488,boostcamp-sts-v1-test-488,slack-sampled,"듣고, 알고도 닥치니 멘붕이 오더라고요.",음악 듣고 저는 바로 팬이 됐어요.
+491,boostcamp-sts-v1-test-491,slack-sampled,강남 사업팀과 조만간 맛난거 드시죠!,곧 또 뵙길 바라며 나중에는 맛있는 것 함께 드시지요~!!
+495,boostcamp-sts-v1-test-495,slack-sampled,볼 빵빵 너무 귀여워요 ㅠㅠㅠ 엉엉,냥이 없어요 엉엉 ㅠㅠㅠ
+496,boostcamp-sts-v1-test-496,slack-sampled,<PERSON> 님과 함께했습니다!!,<PERSON> 님과 함께 하였습니다~!!
+499,boostcamp-sts-v1-test-499,slack-sampled,너무 즐거운 시간이었습니다,저도 넘 위로 받는 즐거운 시간이었어요
+500,boostcamp-sts-v1-test-500,slack-sampled,넵넵. 그 마음가짐 명심하겠습니다.,넵넵. 아주 쎈 ㅠㅠ
+508,boostcamp-sts-v1-test-508,slack-sampled,"AI 엔지니어로 발돋움 하면서 마주한 고민과 인사이트를 전할 예정이니, 많은 관심과 참석 부탁드립니다","재택으로 근무하는 모습과, 비대면으로 영상회의 등 업무를 수행하는 모습 등을 촬영할 예정이구요 ㅎ"
+510,boostcamp-sts-v1-test-510,slack-sampled,담번엔 기회되면 우리 회사 투자유치 관련 일화들도 듣고싶군요.,담에 기회되면 캐나다 스토리 좀 들려주세요.
+511,boostcamp-sts-v1-test-511,slack-sampled,30년 후 아이유가 어떨지 궁금하네요,아이유가 놔주질 않네요 ㅠㅠ
+516,boostcamp-sts-v1-test-516,slack-sampled,열심히 만드신 상품 고객들에게 잘 알리고 이롭게 전파 하겠습니다.,앞으로 세상에 우리 서비스를 잘 알릴 수 있도록 하겠습니다.
+517,boostcamp-sts-v1-test-517,slack-sampled,게더타운에서 한번 만난 이후로 처음 얘기를 나눴어요.,"게더타운 투어도 하고, 해변에서 힐링하며 이야기 나누었어요~"
+518,boostcamp-sts-v1-test-518,slack-sampled,오늘 이야기 너무 재밌었습니다~,오늘 이야기 너무 즐거웠습니다!!
+520,boostcamp-sts-v1-test-520,slack-sampled,포즈의 의미는… “여기 이쪽이 소비의 길입니다” 안내하는 건가요….?!,포즈는… 손가락 대신 주변에 있는 길쭉한 무언가로 대체해보았습니다!!!!ㅋㅋ
+528,boostcamp-sts-v1-test-528,slack-sampled,진짜 이거 우리만 재밌나 넘 재밌네용ㅎㅎ,PT 경험담이 너무 재밌네용 ㅎㅎ
+545,boostcamp-sts-v1-test-545,slack-sampled,<PERSON> 님과 도넛 타임에 이어 두번째 이야기 시간을 가졌습니다.,<PERSON> 님과 함께 도넛 식사 자리를 가졌습니다!
+551,boostcamp-sts-v1-test-551,slack-sampled,그 외 유투브와 브런치 글을 공유해봅니다.,선릉역에서 우아하게 커피;브런치와 산책까지 하였습니다.
+554,boostcamp-sts-v1-test-554,slack-sampled,많은 참여 부탁드려요 ㅎㅎ,많은 참여 부탁드려요!
+557,boostcamp-sts-v1-test-557,slack-sampled,이렇게 백스에서라도 업무하면서 만나기 어려운 분들과 이야기 나누는 시간이 즐겁네요!,"업무 관련하여 이런 저런 아이디어를 공유하고, 나누는 시간도 너무 좋았음당!"
+558,boostcamp-sts-v1-test-558,slack-sampled,드디어 만난 <PERSON> 님과 즐거운 시간 보냈어요.,캠핑왕 <PERSON>님과 오랜만에 즐거운 담소 시간을 가져서 너무 좋았습니다~!
+559,boostcamp-sts-v1-test-559,slack-sampled,앜ㅋㅋ두분다 넘나 귀욥..,두분 너무 귀여워요..
+571,boostcamp-sts-v1-test-571,slack-sampled,밥 먹으면서 계속 웃으면서 대화한 즐거운 시간이었습니다!,시간가는줄 모르고 너무 즐거운 시간이였네요.
+573,boostcamp-sts-v1-test-573,slack-sampled,따릉이 번개 한번 갑시다.,번개 한번 띄우시죠!
+577,boostcamp-sts-v1-test-577,slack-sampled,<PERSON> 님도 합류해주셔서 한층 더 즐거웠습니다.,<PERSON> 님도 같은 이슈가 있는데 바로 이메일 변경해주시는게 베스트
+582,boostcamp-sts-v1-test-582,slack-sampled,14번째 <PERSON> 님과 즐겁게 이야기 나눴습니당 이런저런 공통점이 많더라구요!! ㅎㅎ,이제 뒤에 있는 트리 치우고 꽃 맞이를! <PERSON> 님 반갑습니당!!!
+588,boostcamp-sts-v1-test-588,slack-sampled,오 너무 좋습니다!!,너무 좋습니다!!!
+595,boostcamp-sts-v1-test-595,slack-sampled,오늘도 잘 되는 길로 향하는 힘찬 한 걸음 내딛길 바랍니다!,담에 또 뵙길 기대하며 행복한 한주 되시길 바래요!!
+598,boostcamp-sts-v1-test-598,slack-sampled,와 축하드립니다 !!,생일 축하드립니다!!
+606,boostcamp-sts-v1-test-606,slack-sampled,편안한 분위기에서 내내 즐겁게 이야기했습니다 ㅎㅎ,이런저런 이야기하면서 즐겁게 식사했습니다
+608,boostcamp-sts-v1-test-608,slack-sampled,시간을 역행하는 미모의 비결이 궁금한 권정열님,저에게는 특히 개발자분들께 개인적으로 궁금했던 것들을 해소하는 유익한 시간이었습니다!
+609,boostcamp-sts-v1-test-609,slack-sampled,아이와 함께 앞으로 행복한 일 많으시길~!!!,앞으로 많은일 함께해보시죵! ㅎㅎ
+614,boostcamp-sts-v1-test-614,slack-sampled,진행중이신 딥러닝 연구와 인턴 업무 모두 마무리 잘 하시길 기원 드립니다!,"학업과 인턴업무를 병행하셔야 하는데, 건강관리도 잘하시면 좋을 것 같아요."
+620,boostcamp-sts-v1-test-620,slack-sampled,서로 지금까지 어떤 연구들을 주로 해왔고 어떤 방식의 연구를 하고 싶은지 나누는 좋은 기회였습니다!,"각 연구실에서 어떠한 연구를 진행하는지 한눈에 파악하고, 협력 방안 모색하기"
+630,boostcamp-sts-v1-test-630,slack-sampled,아침 제주도 풍경입니다,산책 나오니 마주한 풍경입니다.
+631,boostcamp-sts-v1-test-631,slack-sampled,NRC 강추드립니다~!,22 저도 NRC에요!~
+634,boostcamp-sts-v1-test-634,slack-sampled,이거 제목반 봐도 똭 뭔지 알듯.,이 내용은 첨 보네요..
+648,boostcamp-sts-v1-test-648,slack-sampled,맛있게 드셨다니 좋네요.,종주국 프랑스에서 많이 드셨다니 너무 부럽습니다 ㅠ
+655,boostcamp-sts-v1-test-655,slack-sampled,요약 감사합니다~!,확인 감사드립니다!
+658,boostcamp-sts-v1-test-658,slack-sampled,많은 참석 부탁드립니다,많은 관심 부탁드립니다!
+664,boostcamp-sts-v1-test-664,slack-sampled,오 치앙마이도 넘 좋…,치앙마이도 리모트 성지래요!
+666,boostcamp-sts-v1-test-666,slack-sampled,"의외로 많은 공통점을 발견하기도 했고, 특히 지인분들 중에 뮤추얼이 여러분 계시다는 사실이 놀랍기도 하고, 역시 사람은 착하게 살아야 한다는 점을 새삼 생각해보게 되었습니다.",이야기 꽃을 피우던 중 몇가지 공통점을 발견하게 되었습니다.
+670,boostcamp-sts-v1-test-670,slack-sampled,엄머나 귀여워라!!,우와ㅜㅜ 강아지 너무 귀여워요...!
+691,boostcamp-sts-v1-test-691,slack-sampled,저도 즐거웠습니다!!,저도 오늘 즐거웠습니다!
+702,boostcamp-sts-v1-test-702,slack-sampled,아 넵넵 감사합니다!,의견 감사합니다! ㅎㅎ
+703,boostcamp-sts-v1-test-703,slack-sampled,"모쪼록 건강관리 유의하시고, 담번에는 이사한 사무실에서 만나뵙도록 하겠습니다.",모쪼록 이번 프로젝트도 다들 건강챙기시며 잘마무리하시길 응원드립니다.
+708,boostcamp-sts-v1-test-708,slack-sampled,비활성화 되었습니다,"넵, 모두 비활성화 된 것 확인했습니다"
+710,boostcamp-sts-v1-test-710,slack-sampled,넵 그렇게 진행해주셔도 괜찮습니다!,가능하다면 저에게만 권한이 부여되어도 괜찮습니다!
+711,boostcamp-sts-v1-test-711,slack-sampled,다른분이 먼저 사용하신다는게 슬리퍼를 신으셨다는건가요?,음.. 그렇게 했더니.. 다른 분이 먼저 사용하시네요 ㅠ
+724,boostcamp-sts-v1-test-724,slack-sampled,<PERSON> 이게 노션이죠?,<PERSON> 이야기 재미있었습니다
+752,boostcamp-sts-v1-test-752,slack-sampled,병헌씨와~! 운명의 장난ㅎㅎ,오~~ㅋㅋ 바람머리~~ ㅎㅎㅎ
+765,boostcamp-sts-v1-test-765,slack-sampled,아이유 단체 콘서트 손 들어봅니다!!!,1아이유. 홍콩 콘서트2번 갔습니다 !
+769,boostcamp-sts-v1-test-769,slack-sampled,"앞으로도 많은 의견, 제안 부탁드립니다!",댓글로 한줄씩이라도 의견 꼭 부탁드립니다!
+781,boostcamp-sts-v1-test-781,slack-sampled,우아 대박! 이렇게 컸다,우아 진쨔 잘 크네요!
+783,boostcamp-sts-v1-test-783,slack-sampled,뀰정보들 정말 감사합니다!,너무 감사합니다!!
+789,boostcamp-sts-v1-test-789,slack-sampled,고고! 첫번째 책은 요것입니다 ㅎ,쥬스 기계가 요것입니다.
+790,boostcamp-sts-v1-test-790,slack-sampled,<PERSON> 님과 처음으로 이야기를 나누어 보았습니다!,<PERSON> 과 처음으로 잡담 시간을 가졌는데 웃음이 끊기질 않았습니다!
+794,boostcamp-sts-v1-test-794,slack-sampled,오늘 너무 신기하고 재미있었습니다ㅎㅎ,뭔가 친숙하면서도 신기한 조합에 너무 너무 재미있는 시간이었네요!
+800,boostcamp-sts-v1-test-800,slack-sampled,다시 가시죠 ㅋㅋㅋ,오 무술 하러 가시네요 ㅋㅋ
+805,boostcamp-sts-v1-test-805,slack-sampled,이야기를 듣고 저도 재밌는 커리어들을 많이 쌓고 싶다는 생각이 들었답니다,"개인적으로 골프를 해 보고 싶다는 생각이 많았는데, 제주도에서 쉽게 즐길 수 있다는 이야기를 듣고 너무 가고 싶더라구요ㅠㅠ"
+812,boostcamp-sts-v1-test-812,slack-sampled,오…좋은 에네르기 공유 감사합니다!,오오 유용한 정보 감사합니다!
+824,boostcamp-sts-v1-test-824,slack-sampled,"채택된 <PERSON> 와 최다 의견 주신 <PERSON> , 최장거리에서 뽀인또 빡 짚어주신 <PERSON> 에게 치킨쿠폰 보내드리겠습니다!",어휴. 앞으로 이런 일이 생기면 신고 전 <PERSON> 에게 컨설팅을….. 쿄쿄.
+830,boostcamp-sts-v1-test-830,slack-sampled,…어떤 캐릭터인지 궁금하네요,영화를 보면 어떤 모습인지 궁금합니다 ㅎ
+833,boostcamp-sts-v1-test-833,slack-sampled,황금같은 의견 남겨주신 열두분께 감사의 마음 담아 황금꿀참외 보내드리겠습니다,추천해주신 여러 분들께 감사한 마음을.. 따끈따끈 넘 맛나요!
+849,boostcamp-sts-v1-test-849,slack-sampled,요새 제 최대 고민이 '나는 무엇을 할 때 행복한가!,요새 최대 고민인게 밥 챙겨먹기라 아 결혼하면 좀 달라질까??
+850,boostcamp-sts-v1-test-850,slack-sampled,"조만간 클라이밍, 축구 꼭 같이 하면 좋겠습니다, 기대합니다!!",그래도 다음에 같이 클라이밍을 가기로! 꼭!
+853,boostcamp-sts-v1-test-853,slack-sampled,잘하시는 멘토분들 정말 많은것 같다는 생각이 드네요!,저희 멘토분들도 다들 고생 많으신 거 같다
+857,boostcamp-sts-v1-test-857,slack-sampled,"다양한 디지털 , AI 전략 프로젝트에 참여하시면서 AI에 대한 경험과 관심을 키우셨습니다.","더 큰 그림을 보며, 내 회사라는 느낌과 오너십을 가지고 더 많은 프로젝트에 적극적으로 참여하고 싶어 하셨습니다."
+858,boostcamp-sts-v1-test-858,slack-sampled,여름여름한 회식 즐거웠어요!,오늘 이야기할 수 있어서 너무 즐거웠어요!!
+869,boostcamp-sts-v1-test-869,slack-sampled,"새로 이사하셨다는데,, 예전에 제가 살던 동네라 이웃주민 될 뻔 했네요.ㅋㅋ","동네주민이 되는데 성공한다면, 이번에는 또 동네 주민 모임을 한 번 진행을!!!"
+875,boostcamp-sts-v1-test-875,slack-sampled,7월에도 저희 다같이 모이는 모임 잘 기획돼서 얼굴 뵙고 인사 드리면 좋겠습니다.,혹시라도 인턴십 기간 중에 상경하실 일이 있으면 뵙고 인사드릴게요.
+876,boostcamp-sts-v1-test-876,slack-sampled,만나서 반가웠습니다~!,만나서 반가웠습니다~~
+877,boostcamp-sts-v1-test-877,slack-sampled,오늘 저녁곡은 빈티지 캐롤임돠...,저도 오늘 저녁은 햄버거로 하겠습니다. ㅎㅎㅎ
+891,boostcamp-sts-v1-test-891,slack-sampled,오우 다들 축하 감사합니다~!!,오우 감사합니다!!!
+894,boostcamp-sts-v1-test-894,slack-sampled,여러명의 브레인 스토밍보다 혼자 숙고하는 게 더 창의적이다?,어른 보다 아이가 더 창의적이다?
+898,boostcamp-sts-v1-test-898,slack-sampled,역시 인생은 한방…….,와..역시 새 휴대폰……… 영상 퀄리티….
+900,boostcamp-sts-v1-test-900,slack-sampled,이야기 하다가 중간에 저의 압박으로 저랑 페북 친구도 맺고 수확이 좋은 시간이었습니다.,들으면서 저의 커리어패스도 또 한번 다시 생각해보게 되는 정말 좋은 시간이였습니다!!
+905,boostcamp-sts-v1-test-905,slack-sampled,오늘 너무 즐거웠습니다,30분동안 정말 즐거웠어요
+907,boostcamp-sts-v1-test-907,slack-sampled,흰색 맨투맨 제가 제일 큰 것 같아 2xl 가져갈게용,헛 근데 흰색 맨투맨 사진 보면 XL 인것 같은데..
+908,boostcamp-sts-v1-test-908,slack-sampled,루틴에 대한 대화를 돌이켜보며 생각난 [트렌드 코리아 2022] 속 '바른생활 루틴이' 챕터의 문장도 함께 공유합니다!,모닝 루틴이 특별히 없으신 분들도 이번주는 각자의 루틴을 소중한 사람들과 만들어보시는 건 어떨까요? (라고 P가 말해봅니다.. )
+912,boostcamp-sts-v1-test-912,slack-sampled,ㅋㅋ눈이 잔뜩 화난게 너무 웃깁니닼ㅋㅋ,ㅋㅋ앜ㅋㅋ 진짜 화난 표정 너무 잘 담겻네욬ㅋㅋ
+914,boostcamp-sts-v1-test-914,slack-sampled,오늘도 즐거웠습니다,인스타 감성 가득한 7월 회식 즐거웠습니다
+925,boostcamp-sts-v1-test-925,slack-sampled,"롤.. 인생의 시간을 갈아버린, 과거의 추억… ㅠㅠ",<PERSON> 님의 시간을 돌려...
+933,boostcamp-sts-v1-test-933,slack-sampled,깍두기인 제가 이 회식 후기를 쓰고 있습니다.,플러스 깍두기 <PERSON> 와 함께한 회식입니다.
+935,boostcamp-sts-v1-test-935,slack-sampled,너~~무 재미있으셨다고 해서 의도치는 않았지만 나름 만족감(?)을 느끼고 있다고 나눴습니다~~.,스포 위기 겪으셨지만 저희가 잘 참아서(?) 지켜드릴 수 있었습니다.
+945,boostcamp-sts-v1-test-945,slack-sampled,그리고 하루도 같은 날의 하늘은 없더라구요!!,아직 갈길은 많더라고요
+947,boostcamp-sts-v1-test-947,slack-sampled,앞으로 우리 회사에서 함께 성장하기를 기대합니다!!,앞으로 서로 정보 공유 하면서 함께 성장했으면 좋겠네요!
+950,boostcamp-sts-v1-test-950,slack-sampled,이야기 나누다보니 공통점이 많아서 신기하면서도 즐거웠는데요!,이야기를 주고 받다보니 생각보다 공통점이 많아서 또 한번 신기한 경험이었습니다.
+959,boostcamp-sts-v1-test-959,slack-sampled,둘다 게임을 좋아해서 게임에 대한 대화도 많이 나눴던것 같네요.,"업무 시간 보다 업무 외 시간에 이야기를 더 많이 나눴던 것 같은데,"
+960,boostcamp-sts-v1-test-960,slack-sampled,<PERSON> 과 즐거운 얘기 나눴습니다!,오늘 <PERSON> 님과 즐거운 이야기를 나눴습니다.
+972,boostcamp-sts-v1-test-972,slack-sampled,질문 던져주시면 제가 대 질 해드릴께요.,"그래서 질문해주시면 전 최대한 열심히 설명해드리려 하고, 좋아해요!”라고 하시더라구요!"
+973,boostcamp-sts-v1-test-973,slack-sampled,유익한 시간 만들어주셔서 감사합니다,오늘 시간 내어주셔서 너무 감사했습니다
+974,boostcamp-sts-v1-test-974,slack-sampled,후기 들려주세요ㅋㅋ,아 대박!! 들으시고 후기 남겨주세요
+975,boostcamp-sts-v1-test-975,slack-sampled,데이터 팀의 뉴스타!!!,데이터팀 화이팅 화이팅!!!
+993,boostcamp-sts-v1-test-993,slack-sampled,인생 == 여행이죠. ㅋㅋ,고향 여행이네요. ㅋㅋ
+1007,boostcamp-sts-v1-test-1007,slack-sampled,어휴… !! 무사하셔서 다행이에요!!,꺄아!!! 멋지네요!!
+1018,boostcamp-sts-v1-test-1018,slack-sampled,"산을 오르며 스트레스를 풀고는 하신다는데요, 정말 건강한 취미를 가지고 계셔서 너무 부러운거 같아요",세상 파릇파릇한 시절을 너무나 착실하게 예쁘게 잘 보내고계신것 같아서 참 부러웠고요!!
+1021,boostcamp-sts-v1-test-1021,slack-sampled,나중에 또 이것저것 즐겁고 재밌는 업무 이외의 이야기를 나누기로하며 마무리 했습니다.,이후에도 서로 재미있게 본 드라마에 대해 한참 더 이야기를 했습니다.
+1030,boostcamp-sts-v1-test-1030,slack-sampled,앞으로 잘 부탁 드려요~!,앞으로 많은 지도편달 부탁드려요!
+1037,boostcamp-sts-v1-test-1037,slack-sampled,담에는 오프에서 얼굴 뵐 수 있기를,제 머리가 어깨에 닿기 전에는 한번 뵐 수 있길
+1053,boostcamp-sts-v1-test-1053,slack-sampled,인터뷰때도 에너지 장난 없으신 것 같았습니다,요즘 열일을 하고 계신데 엄청난 집중력을 가지신 것 같아서 부러웠습니다ㅎㅎㅎ
+1064,boostcamp-sts-v1-test-1064,slack-sampled,매우 많은 곳에서 강의 요청을 받는 우리 회사 입니다만!,우리 회사에 합류하기 전부터 도움을 받았었는데 우리 회사에서도 큰 도움을 받고 있습니다
+1066,boostcamp-sts-v1-test-1066,slack-sampled,아무쪼록 처음 뵈었지만 공감 되는 얘기로 금세 내직 친밀감을 쌓았네요.,"그래도 나름 몇번 뵈었다고, 저는 내적 친밀감이 뿜뿜 했네요 ㅋㅋ"
+1069,boostcamp-sts-v1-test-1069,slack-sampled,나중에 골목 인프라 정보 좀 공유해주세요!,와우 나중에 효과 공유 좀 부탁드려요~
+1085,boostcamp-sts-v1-test-1085,slack-sampled,환영해주셔서 감사합니다!!ㅎㅎ,뜨겁게 뜨겁게 환영합니다!!!
+1086,boostcamp-sts-v1-test-1086,slack-sampled,전 아스파라거스는 안 키워봤지만 찾아보니 과습 또는 저광량 때문인 경우가 많다,혹시 아스파라거스 키워보신 분 계신가요?
+1092,boostcamp-sts-v1-test-1092,slack-sampled,얘기 너무너무 즐거웠고요 예비 아빠되신거 완전완전 축하드려요!!,이야기 너무 즐거웠습니다
+1095,boostcamp-sts-v1-test-1095,slack-sampled,"슬랙 채널 개편: 현재 75개의 채널들이 있는데 사용되지 않는 채널들은 정리하고, 넘버링을 통해 효율적으로 볼 수 있도록 하면 어떨까요?",오늘 슬랙의 채널 및 사용 권한에 대한 변경이 있을 예정입니다!
