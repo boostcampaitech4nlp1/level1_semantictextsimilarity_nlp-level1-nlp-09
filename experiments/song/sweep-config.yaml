@@ -12,8 +12,12 @@
             'values': [2e-5]
             },
         'model_name': {
-            'values': ['beomi/KcELECTRA-base']
+            'values': ['monologg/koelectra-base-v3-discriminator']
+        },
+        'seed': {
+            'values': [1,4,6,19960505,12,16,22]
         }
+
 
     }
 }

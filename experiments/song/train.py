@@ -29,11 +29,11 @@ if __name__ == "__main__":
     )
     parser.add_argument("--wandb_label", default="", type=str)
     parser.add_argument("--batch_size", default=32, type=int)
-    parser.add_argument("--max_epoch", default=20, type=int)
+    parser.add_argument("--max_epoch", default=30, type=int)
     parser.add_argument("--gradient_accumulation_steps", default=1, type=int)
-    parser.add_argument("--seed", default=404, type=int)
+    parser.add_argument("--seed", default=1, type=int)
     parser.add_argument("--shuffle", default=True, type=bool)
-    parser.add_argument("--wandb_offline", default=True, type=bool)
+    parser.add_argument("--wandb_offline", default=False, type=bool)
     parser.add_argument("--learning_rate", default=2e-5, type=float)
     parser.add_argument("--warmup_ratio", default=0.1, type=float)
     parser.add_argument("--num_workers", default=4, type=int)
@@ -45,11 +45,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     wandb_name = (
-        f"Robin_{args.model_name}_lr_{args.learning_rate}_{args.wandb_label}"
+        f"Robin 10 epochs no punctuations"
     )
 
     wandb_logger = WandbLogger(
-        name=wandb_name, project="STS", offline=args.wandb_offline
+        name=wandb_name, entity="ecl-mlstudy", project="STS", offline=args.wandb_offline
     )
     wandb_logger.experiment.config.update(args)
 
@@ -86,14 +86,14 @@ if __name__ == "__main__":
         tokenizer,
     )
 
-    """
+
     early_stop_callback = EarlyStopping(
         monitor="val_pearson",
         min_delta=0.00,
         patience=5,
         mode="max",
     )
-    """
+    
 
     lr_monitor = LearningRateMonitor(logging_interval="step")
 
@@ -103,7 +103,10 @@ if __name__ == "__main__":
         gpus=1,
         max_epochs=args.max_epoch,
         log_every_n_steps=1,
-        callbacks=[lr_monitor],
+        callbacks=[
+            lr_monitor,
+            early_stop_callback,       
+            ],
         accumulate_grad_batches=args.gradient_accumulation_steps,
     )
 
@@ -112,4 +115,4 @@ if __name__ == "__main__":
     trainer.test(model=model, datamodule=dataloader)
 
     # 학습이 완료된 모델을 저장합니다.
-    torch.save(model, f"{args.model_name}_model.pt", pickle_module=dill)
+    torch.save(model, f"{args.seed}_KoELECTRA_base.pt", pickle_module=dill)

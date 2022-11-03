@@ -73,6 +73,7 @@ class Dataloader(pl.LightningDataModule):
     def text_cleaning(self, text):
         # Ref: https://github.com/Beomi/KcBERT
         text = pattern.sub(" ", text)
+        text = re.sub(r'[^\w\s]', '', text)
         text = emoji.replace_emoji(text, replace="")
         text = url_pattern.sub("", text)
         text = text.strip()

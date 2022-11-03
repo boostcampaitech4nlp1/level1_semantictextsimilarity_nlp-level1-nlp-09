@@ -72,7 +72,7 @@ if __name__ == "__main__":
     # Inference part
     # 저장된 모델로 예측을 진행합니다.
     checkpoint = torch.load(
-        "STS/7os22zm6/checkpoints/epoch=49-step=14600.ckpt",
+        "STS/nfx3ehoo/checkpoints/epoch=19-step=5840.ckpt",
         pickle_module=dill,
     )
     # print(checkpoint.keys())
@@ -88,6 +88,7 @@ if __name__ == "__main__":
     predictions = list(round(float(i), 1) for i in torch.cat(predictions))
 
     # output 형식을 불러와서 예측된 결과로 바꿔주고, output.csv로 출력합니다.
-    output = pd.read_csv("../../data/sample_submission.csv")
+    output = pd.read_csv("../../data/test.csv")
     output["target"] = predictions
     output.to_csv("output.csv", index=False)
+
