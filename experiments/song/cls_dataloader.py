@@ -14,8 +14,6 @@ url_pattern = re.compile(
     r"https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"
 )
 
-generator = Generator(mode="jin")
-
 
 class Dataset(torch.utils.data.Dataset):
     def __init__(self, inputs, targets=[]):
@@ -79,35 +77,26 @@ class Dataloader(pl.LightningDataModule):
         text = repeat_normalize(text, num_repeats=2)
         return text
 
-    def tokenizing(self, dataframe, mode="fit"):
+    def tokenizing(self, dataframe):
         data = []
         for idx, item in tqdm(
             dataframe.iterrows(), desc="tokenizing", total=len(dataframe)
         ):
-            """
-            if mode == "test":
-            text = "\n".join(
-                [item[text_column] for text_column in self.text_columns]
-            )
-            generate_text = generator.generate(text)
-            if generate_text:
-                text = generate_text.replace("\n", "[SEP]")
-            text = text.replace("\n", "[SEP]")
-            else:"""
+            # 두 입력 문장을 [SEP] 토큰으로 이어붙여서 전처리합니다.
             text = "[SEP]".join(
                 [item[text_column] for text_column in self.text_columns]
             )
             prefix_token = "[ORG]"
-            """if "rtt" in item["source"]:
+            if "rtt" in item["source"]:
                 prefix_token = "[RTT]"
-            text = prefix_token + text"""
+            text = prefix_token + text
             outputs = self.tokenizer(
                 text, add_special_tokens=True, padding="max_length", truncation=True
             )
             data.append(outputs["input_ids"])
         return data
 
-    def preprocessing(self, data, mode="fit"):
+    def preprocessing(self, data):
         # 안쓰는 컬럼을 삭제합니다.
         data = data.drop(columns=self.delete_columns)
 
@@ -121,7 +110,7 @@ class Dataloader(pl.LightningDataModule):
         except:
             targets = []
         # 텍스트 데이터를 전처리합니다.
-        inputs = self.tokenizing(data, mode)
+        inputs = self.tokenizing(data)
 
         return inputs, targets
 
@@ -143,12 +132,11 @@ class Dataloader(pl.LightningDataModule):
         else:
             # 평가데이터 준비
             test_data = pd.read_csv(self.test_path)
-            test_inputs, test_targets = self.preprocessing(test_data, "test")
+            test_inputs, test_targets = self.preprocessing(test_data)
             self.test_dataset = Dataset(test_inputs, test_targets)
 
             predict_data = pd.read_csv(self.predict_path)
-            # predict_data = predict_data.loc[predict_data["source"].str.contains("rtt")]
-            predict_inputs, predict_targets = self.preprocessing(predict_data, "test")
+            predict_inputs, predict_targets = self.preprocessing(predict_data)
             self.predict_dataset = Dataset(predict_inputs, [])
 
     def train_dataloader(self):

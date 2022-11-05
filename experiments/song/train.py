@@ -29,7 +29,7 @@ if __name__ == "__main__":
     )
     parser.add_argument("--wandb_label", default="", type=str)
     parser.add_argument("--batch_size", default=32, type=int)
-    parser.add_argument("--max_epoch", default=20, type=int)
+    parser.add_argument("--max_epoch", default=40, type=int)
     parser.add_argument("--gradient_accumulation_steps", default=1, type=int)
     parser.add_argument("--seed", default=404, type=int)
     parser.add_argument("--shuffle", default=True, type=bool)
@@ -37,16 +37,18 @@ if __name__ == "__main__":
     parser.add_argument("--learning_rate", default=2e-5, type=float)
     parser.add_argument("--warmup_ratio", default=0.1, type=float)
     parser.add_argument("--num_workers", default=4, type=int)
-    parser.add_argument("--train_path", default="../../data/train.csv", type=str)
+    parser.add_argument(
+        "--train_path",
+        default="../../data/train.csv",
+        type=str,
+    )
     parser.add_argument("--dev_path", default="../../data/dev.csv", type=str)
     parser.add_argument("--test_path", default="../../data/dev.csv", type=str)
     parser.add_argument("--predict_path", default="../../data/test.csv", type=str)
     parser.add_argument("--new_token_path", default="new_token.csv", type=str)
     args = parser.parse_args()
 
-    wandb_name = (
-        f"FacerAin_{args.model_name}_lr_{args.learning_rate}_{args.wandb_label}"
-    )
+    wandb_name = f"FacerAin_seed_{args.seed}"
 
     wandb_logger = WandbLogger(
         name=wandb_name, project="STS", offline=args.wandb_offline
@@ -60,8 +62,8 @@ if __name__ == "__main__":
     new_tokens = pd.read_csv(args.new_token_path).columns.tolist()
 
     tokenizer.add_tokens(new_tokens)
-    special_tokens_dict = {"additional_special_tokens": ["[RTT]", "[ORG]"]}
-    tokenizer.add_special_tokens(special_tokens_dict)
+    # special_tokens_dict = {"additional_special_tokens": ["[RTT]", "[ORG]"]}
+    # tokenizer.add_special_tokens(special_tokens_dict)
     pl.seed_everything(args.seed)
 
     # dataloader와 model을 생성합니다.
@@ -112,4 +114,4 @@ if __name__ == "__main__":
     trainer.test(model=model, datamodule=dataloader)
 
     # 학습이 완료된 모델을 저장합니다.
-    torch.save(model, f"{args.model_name}_model.pt", pickle_module=dill)
+    torch.save(model, f"{args.seed}_model.pt", pickle_module=dill)
