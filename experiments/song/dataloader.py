@@ -98,9 +98,9 @@ class Dataloader(pl.LightningDataModule):
                 [item[text_column] for text_column in self.text_columns]
             )
             prefix_token = "[ORG]"
-            if "rtt" in item["source"]:
+            """if "rtt" in item["source"]:
                 prefix_token = "[RTT]"
-            text = prefix_token + text
+            text = prefix_token + text"""
             outputs = self.tokenizer(
                 text, add_special_tokens=True, padding="max_length", truncation=True
             )
@@ -147,6 +147,7 @@ class Dataloader(pl.LightningDataModule):
             self.test_dataset = Dataset(test_inputs, test_targets)
 
             predict_data = pd.read_csv(self.predict_path)
+            # predict_data = predict_data.loc[predict_data["source"].str.contains("rtt")]
             predict_inputs, predict_targets = self.preprocessing(predict_data, "test")
             self.predict_dataset = Dataset(predict_inputs, [])
 
