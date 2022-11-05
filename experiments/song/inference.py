@@ -41,8 +41,8 @@ if __name__ == "__main__":
     )
     new_tokens = pd.read_csv(args.new_token_path).columns.tolist()
     tokenizer.add_tokens(new_tokens)
-    special_tokens_dict = {"additional_special_tokens": ["[RTT]", "[ORG]"]}
-    tokenizer.add_special_tokens(special_tokens_dict)
+    # special_tokens_dict = {"additional_special_tokens": ["[RTT]", "[ORG]"]}
+    # tokenizer.add_special_tokens(special_tokens_dict)
 
     # dataloader와 model을 생성합니다.
     dataloader = Dataloader(
@@ -72,7 +72,7 @@ if __name__ == "__main__":
     # Inference part
     # 저장된 모델로 예측을 진행합니다.
     checkpoint = torch.load(
-        "STS/7os22zm6/checkpoints/epoch=49-step=14600.ckpt",
+        "STS/yp6uckol/checkpoints/epoch=39-step=11680.ckpt",
         pickle_module=dill,
     )
     # print(checkpoint.keys())
@@ -81,6 +81,9 @@ if __name__ == "__main__":
     model.load_state_dict(
         checkpoint["state_dict"],
     )
+    test_data = pd.read_csv(args.predict_path)
+    test_data = test_data.loc[test_data["source"].str.contains("rtt")]
+
     trainer.test(model=model, datamodule=dataloader)
     predictions = trainer.predict(model=model, datamodule=dataloader)
 
@@ -88,6 +91,10 @@ if __name__ == "__main__":
     predictions = list(round(float(i), 1) for i in torch.cat(predictions))
 
     # output 형식을 불러와서 예측된 결과로 바꿔주고, output.csv로 출력합니다.
-    output = pd.read_csv("../../data/sample_submission.csv")
+    # output = pd.read_csv("../../data/sample_submission.csv")
+    output = pd.DataFrame()
+    output["id"] = test_data["id"]
     output["target"] = predictions
-    output.to_csv("output.csv", index=False)
+    # output["target"] = predictions
+
+    output.to_csv("output.csv", index=True)
